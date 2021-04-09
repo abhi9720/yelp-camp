@@ -1,0 +1,536 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+
+
+body{
+    
+    background: #FAFBFC !important;
+    font-family: 'Roboto', sans-serif;
+    color: #111111
+    
+}
+
+.reset{
+    
+    
+    font-family: 'Roboto', sans-serif; ;
+    margin: 0px;
+    padding: 0px;
+    background-color: transparent;
+    border:0px;
+    
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    
+    font-weight: 400;
+    line-height: 28px;
+    color: #0C163B;
+}
+
+a{
+
+    color: black;  
+    text-decoration: none;    
+    color: rgb(47, 47, 122);
+}
+
+.btn-reset{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+
+}
+
+.mt-n-5{
+    margin-top: -60px;
+}
+
+.camp-image{
+	    width: 100%;
+		height:18rem;                  
+        transition:  filter .7s ease-in;		
+}
+.camp-image:hover{
+    filter: brightness(1.06) drop-shadow(0px 0px 30px #c0bdbd);
+}
+
+.camp-image-2{
+    width: 10rem;
+    height:10rem;                  
+    padding: 5px;	
+    border: 1px solid black;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.card-divider{
+    border-bottom: 1px solid #e1f1ff;
+}
+
+
+
+.camp-card{
+    
+    border: 0;
+    padding: 4px;
+    border-radius: 5px;
+    /* background: rgba(248, 252, 253, 0.973); */
+    /* box-shadow: 0px 0px 30px rgba(57, 56, 61, 0.205);    */
+    transition: box-shadow .7s ease;    
+
+}
+.camp-card:hover{
+    
+    box-shadow: 0px 30px 45px rgba(57, 56, 61, 0.205);
+}
+
+.bd-0{
+    
+    border: 0px;
+    background-color: transparent;
+}
+
+.btn-hover:hover{
+    cursor: pointer;
+    border: 0px;
+    background-color: transparent;
+
+}
+.pos-a{
+    position: absolute;
+
+}
+
+
+
+@media(max-width:1200px){
+    .edit-image{
+    float: center;
+
+        
+    }
+}
+.nav-brand-title{
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+    color:#ff7900;
+    font-weight: 700;   
+    font-size: 1.5rem;
+    margin-right: 4rem;
+}
+
+
+#camp-title-head{
+    font-size:2.8rem ;
+    margin-top: 1rem;
+    margin-bottom: 0px;
+      
+    color: #0C163B;
+    bottom: 0;   
+    font-weight:400;    
+}
+
+.bg-white{
+    background-color: #fff;
+}
+
+
+.logo{
+    font-family: 'Roboto', sans-serif; ;
+    font-weight: 500;
+    font-size: 3rem;
+    color: #13386fe0;
+    font-weight: 400;
+    line-height: 2rem;        
+    margin-top: 0rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+
+ .flash{
+    position: static;
+    top: 0;
+    left: 0;
+    width: 100%;    
+     
+ }
+
+  /* review  */
+ .review{
+     background-color: white;
+     margin-bottom: 0px;
+     bottom: 0;
+ }
+
+.review-user{
+    color: #0c163b;
+    font-size: 1.2rem;
+    font-weight: 400;
+}   
+
+#review-header{
+    color: #0c163b;
+    font-size: 2rem;
+}
+
+
+ 
+ 
+ #add-review-btn{
+
+     background-color: #79589f;
+     color: #FAFBFC;
+     
+     margin-left: 2rem;
+     margin-top: 1.2rem;
+     margin-bottom: 14px;
+     margin-left: 70%;
+     border-radius: 20px;
+    
+     padding: .2rem 1rem;
+     
+     font-size: 1rem;
+ 
+ 
+ }
+ 
+ #add-review-btn:hover{
+    
+     
+     cursor: pointer;
+ }
+
+
+
+
+ .review-text{
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    margin-bottom: 0px;
+    font-family:  Roboto,   Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif    ;
+    font-weight: 500;    
+    
+}
+
+#delete-review{
+   margin: 0px;
+   border: 0px;
+   background-color: transparent;
+   float: right;   
+   margin-left: 6px;
+   color: rgba(255, 0, 0, 0.986);
+   
+}
+
+.show-card-img{
+    width: 100%;
+    height: 30rem;
+}
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+#menu-icon{
+    transform: rotate(90deg);
+}
+
+
+#text-body{
+
+    width: 90%;
+    height: 8rem;
+    margin-left: 14px;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    
+        
+    padding: 10px;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+
+    }
+
+
+@media(max-width:1160px){
+    #text-body{
+       margin: 5px;
+        width: 100%;
+    }
+}
+
+@media(max-width:488px){
+    #text-body{
+       margin: 5px;
+        width: 26rem;
+    }
+}
+
+@media(max-width:470px){
+    #text-body{
+       margin: 0px;
+        width: 20rem;
+    }
+}
+
+#upload-btn-label{
+    background-color: #03045e;
+    color: white;
+    padding: 0.9rem;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+.form-label{
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.description{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    line-break: auto;
+    margin-bottom: 0;
+    padding:0;
+    
+}
+
+#newcamp-description{
+    height: 15rem;
+}
+
+
+#author{
+        font-size: 1.1rem;
+        line-height: 2.4rem;
+
+}
+
+
+
+.camp-search-nav{
+    
+    border-radius: 10px;
+    margin-bottom: 2rem;
+
+}
+
+#search{
+
+    display: flex;
+    
+}
+
+
+
+.nav-btn{
+    width: fit-content;
+    border-radius: 1px;        
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+     margin-bottom: 2px ;
+    border:1px solid #fff;
+    transition: all 0.7s;
+    
+   
+}
+@media(min-width:991px){
+    .nav-btn:hover{
+    color:rgb(179, 32, 63);
+    border-color: chartreuse;
+    
+    
+    /* box-shadow: 1px 2px 3px currentColor; */
+   
+}
+}
+ 
+@media(max-width:991px){
+    .nav-btn{
+        border: 0px;
+
+    }
+}
+ 
+  /* // navebar  */
+  .content {
+    flex: 1 0 auto;
+  }
+  .footer {
+    flex-shrink: 0;
+  }
+
+/* 
+  #header-image{
+    height: 75vh;
+    opacity: 0.8;
+    background-image: url("https://www.threeriversparks.org/sites/default/files/2019-03/Baker%20campground.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    filter: brightness(1.1) drop-shadow(1px 8px 30px #b1afaf);  
+  } */
+
+  
+  .form{
+      background-color: white;
+      margin-top: 2rem;
+      margin-bottom: 5rem;
+      
+     
+
+  }
+
+  #newcamp-title{
+    font-size: 2.5rem;
+   padding: 1rem;
+   margin-bottom: rem;;
+   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   font-weight: 600;
+  }
+
+
+  .new-form-btn{
+    display:   flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 3rem;
+margin-top: 4rem;
+  }
+
+
+
+
+  #add-camp-btn1,#add-camp-btn2{
+    font-family: 'Maven Pro', sans-serif;
+    font-size: .9rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: #189cf0;
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: 2px solid transparent;
+    border-radius: 12rem;
+    color: #fff;
+    font-weight: 400;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+  }
+  
+
+  
+  #add-camp-btn2{
+      padding:0.9rem 2rem ;
+      border-radius: 0px;
+      background-color: rgb(28, 36, 36);
+  }
+
+  #add-camp-btn2:hover {
+    background-color: #fff;
+    border-color: #189cf0;
+    color: #189cf0;
+  }
+
+  #add-camp-btn1:hover {
+    background-color: #fff;
+    border-color: #189cf0;
+    color: #189cf0;
+}
+
+@media(max-width:370px){
+    #add-camp-btn2{
+        padding:0.2rem 1rem ;
+        border-radius: 0px;
+        background-color: rgb(28, 36, 36);
+    }
+  
+
+}
+
+@media(max-width:370px){
+    #add-camp-btn1{
+        padding:0.2rem 1rem ;
+         
+        
+    }
+  
+
+}
+
+.input{
+    
+    border: 1px  solid black;
+    border-radius: 0px;
+    box-shadow: none;
+    
+}
+.form-control:focus {
+        
+    box-shadow:none;
+}
+
+
+.map{
+    margin-top: .3rem;
+    height:24rem;
+    width: 30rem;
+    
+}
+
+@media(max-width : 1200px){
+    .map{
+        
+        height: 18rem;
+        width: 100%;
+        
+    }
+}
+
+@media(max-width : 667px){
+    .map{
+        height: 12rem;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+#city{
+    width: 30rem;
+    
+}
+
+@media(max-width : 1200px){
+    #city{
+      width: 100%;
+       margin-bottom: 2rem;
+        
+    }
+}
+
+@media(max-width : 667px){
+    .map{
+    width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+

@@ -1,0 +1,228 @@
+if(process.env.NODE_ENV !="production{"){
+    require('dotenv').config();
+}
+
+
+ 
+
+//console.log(process.env.SECRET);
+
+const express = require('express');
+
+const path = require('path');
+const mongoose = require('mongoose');
+const ejsMate = require('ejs-mate');
+const ExpressError = require('./utilities/ExpressError');
+const methodOverride = require('method-override'); // override http verb 
+
+const flash  =  require('connect-flash');
+const passport  =  require('passport');;
+const LocalStrategy =  require('passport-local');
+const User  = require('./models/user')
+
+const mongoSanitize = require('express-mongo-sanitize');
+
+const helmet  =  require('helmet')
+
+// requiring our router 
+const campgroundsRoutes =  require('./routes/campgrounds');
+const reviewsRoutes =  require('./routes/reviews');
+const userRoutes =  require('./routes/users');
+
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
+
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp' ;
+// 'mongodb://localhost:27017/yelp-camp';
+
+
+// connecting mongoose 
+// 'mongodb://localhost:27017/yelp-camp'
+mongoose.connect(dbUrl, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+    useFindAndModify:false
+
+})
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error :')); // testing db connected or not 
+db.once('open', () => {
+    console.log('DataBase Connected ');
+})
+
+const app = express();
+
+// middle-ware 
+app.engine('ejs', ejsMate); // tell express instead of default one use this one 
+app.set('view engine', 'ejs'); // changing view engine to ejs
+app.set('views', path.join(__dirname, 'views')); // to void conflict if we call it from some other dir (mean views dir available from every where )
+
+app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
+app.use(express.static(path.join(__dirname, 'public')))
+app.use(mongoSanitize());
+app.use(helmet({}));
+
+
+
+    const scriptSrcUrls = [
+        "https://stackpath.bootstrapcdn.com",
+        "https://api.tiles.mapbox.com",
+        "https://api.mapbox.com",
+        "https://kit.fontawesome.com",
+        "https://cdnjs.cloudflare.com",
+        "https://cdn.jsdelivr.net",
+        
+
+        
+    ];
+    const styleSrcUrls = [
+        "https://kit-free.fontawesome.com",
+        "https://stackpath.bootstrapcdn.com",
+        "https://api.mapbox.com",
+        "https://api.tiles.mapbox.com",
+        
+        "https://use.fontawesome.com",
+        
+        "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css",
+        "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css",
+        
+        
+
+
+    ];
+    const connectSrcUrls = [
+        "https://fonts.gstatic.com",
+        "https://api.mapbox.com",
+        "https://*.tiles.mapbox.com",
+        "https://events.mapbox.com",
+    ];
+    const fontSrcUrls = [
+       
+        
+
+    ];
+    app.use(
+        helmet.contentSecurityPolicy({
+            directives: {
+                defaultSrc: [],
+                connectSrc: ["'self'", ...connectSrcUrls],
+                scriptSrc: ["'unsafe-inline'", "'self'", ...scriptSrcUrls],
+                styleSrc: ["'self'", "'unsafe-inline'", ...styleSrcUrls],
+                workerSrc: ["'self'", "blob:"],
+                childSrc: ["blob:"],
+                objectSrc: [],
+                imgSrc: [
+                    "'self'",
+                    "blob:",
+                    "data:",
+                    "https://res.cloudinary.com/douqbebwk/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT! 
+                    "https://images.unsplash.com",
+                ],
+                fontSrc: ["'self'", ...fontSrcUrls],
+            },
+        })
+    );
+
+    const secret = process.env.SECRET || 'thisshouldbeabettersecret!';
+
+    // const store = MongoStore.create({
+    //     mongoUrl: dbUrl,
+    //     secret,
+    //     touchAfter: 24 * 60 * 60
+    // });
+    
+    // store.on("error", function (e) {
+    //     console.log("SESSION STORE ERROR", e)
+    // })
+
+const sessionConfig = {
+    secret,
+        store: MongoStore.create({ 
+            mongoUrl: dbUrl ,
+                touchAfter:24*3600,
+                secret,
+
+        }),
+        name: 'session',
+       secret,
+        resave: false,
+        saveUninitialized: true,
+        cookie: {
+            httpOnly: true,
+            // secure: true,
+            expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
+            maxAge: 1000 * 60 * 60 * 24 * 7
+        }
+    }
+    
+app.use(session(sessionConfig));
+app.use(flash());
+
+
+
+// this to be before passport.session
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+app.use((req,res,next)=>{
+    //console.log(req.session);
+    console.log(req.query);
+    res.locals.currentUser = req.user;
+    console.log(req.user);
+    res.locals.success =  req.flash('success');
+    res.locals.error =  req.flash('error');
+    res.locals.reviewflash = req.flash('reviewflash')
+    next(); 
+})
+
+
+// prefixing our path 
+app.use('/',userRoutes);    
+app.use('/campgrounds',campgroundsRoutes);    
+app.use('/campgrounds/:id/reviews',reviewsRoutes); // by default we  donot have access to id in our reviews model so we need mergeprams so we pass new arguement 
+// mergePrams in router to get id as well in reviews router 
+
+
+
+
+
+app.get('/', (req, res) => {
+    res.render('home');
+});
+
+
+app.all('*', (req, res, next) => { // for any path this will run (mean for any type request will run if above will not return )
+    //  res.send('404 !!!! ')
+    next(new ExpressError('Page Not Found ', 404))
+
+})
+
+
+//defining our error  if something went wrong 
+app.use((err, req, res, next) => {
+    const { statusCode = 500, message = 'Something Went Wrong ' } = err; // eefault code and default message 
+    //   res.status(statusCode).send(message+"  *****  Error Thrown *****");
+    //   res.send('Ohhh Boy Something Went Wrong!!! ');
+    // we can also decide on the basis of error what to show
+
+    if (!err.message || !err.message) {
+        err.statusCode = 500;
+        err.message = 'Something Went Wrong Please again try later';
+    }
+    // we are editing our message what ever coming as message 
+    // because user not intrested in understanding error
+    res.status(statusCode).render('error', { err }) // passing entire error to templet
+})
+
+
+
+app.listen(3000, () => {
+    console.log('Serving on port 3000');
+})

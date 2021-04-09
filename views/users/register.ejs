@@ -1,0 +1,45 @@
+<% layout('layout/boilerplate') %>
+<link rel="stylesheet" href="/stylesheets/login.css">
+<div class="container">
+    <div class="row mt-5">
+
+        <div class="col-md-6 col-lg-4 col-sm-8  shadow p-4 bg-white mx-auto">
+       
+            <div class="logo" >
+                <p class="text-center mt-2">  Yelp Camp</p>
+               </div>
+
+               <p class="mb-3 fs-3 text-success text-center">  Register  </p>
+
+            <form action="/register" novalidate class="needs-validation" method="POST">
+                <div class="mb-3">
+                    <label class="form-label" for="username">Username </label>
+                    <input class="form-control input" type="text" id="username" name="username" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label " for="email">Email </label>
+                    <input class="form-control input" type="email" id="email" name="email" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="password">Password</label>
+                    <input class="form-control input" type="password" id="password" name="password" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <button class="btn btn-success login-btn">Register</button>
+
+            </form>
+        </div>
+
+
+    </div>
+    </div>

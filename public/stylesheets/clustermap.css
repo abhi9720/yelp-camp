@@ -1,0 +1,11 @@
+
+#cluster-map{
+    height: 27rem;
+    width: 100%;
+}
+
+@media(max-height:680-px){
+    #cluster-map{
+        height: 18rem;
+    }
+}

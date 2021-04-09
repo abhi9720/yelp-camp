@@ -1,0 +1,38 @@
+#sort-btn{
+  font-size: 20px;
+  border: 1px solid rgb(153, 151, 148);
+  padding:0.2rem 1rem;
+  margin-right: 1rem;
+  font-weight: 300;
+  background-color: transparent;
+  display: flex;
+
+  border-radius: 2rem; 
+  color:rgb(192, 24, 24);;
+  
+  background-color: rgb(241, 241, 241);
+}
+  
+#search-btn{
+   
+    border: 0;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 1.7rem;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    
+  }
+
+  
+  #searchbar{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    
+    border: 2px solid rgb(88, 82, 82);
+  }

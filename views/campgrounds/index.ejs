@@ -1,0 +1,139 @@
+<% layout('layout/boilerplate') %>
+<link rel="stylesheet" href="/stylesheets/searchbar.css">
+    <!-- so we are injecting this content into our boiler plate    -->
+<!-- <h1  > All Campground </h1>
+    <div class="text-end mb-3 " >
+        <a class="btn btn-dark" type="button" href="/campgrounds/new" data-bs-toggle="tooltip"
+            data-bs-placement="bottom" title="Add New Campground"> Add Campground +</a>
+    </div>
+
+     
+    <div>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCSP0lXndjQ2lagrKX1h_tS_1s3wC-anpsRg&usqp=CAU"  class="img-fluid" alt="">
+    </div>
+     -->
+<!-- 
+     <div  id="">
+      <p  class="fs-2 text-center fs-bolder">Welcome To Yelp Camp</p>
+      </div> -->
+
+      <link rel="stylesheet" href="/stylesheets/clustermap.css">
+
+      <div  id="cluster-map" id="map" ></div>
+
+<!-- campground seaech bar start   -->
+
+<nav id="searchNav" class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-3">
+  <div class="container">
+
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+   
+    
+     
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+
+
+          <div class="dropdown">
+            <button id="sort-btn" class="dropdown-toggle"  type="button"    data-bs-toggle="dropdown" aria-expanded="false">
+         
+            Sort By &#9660;
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="sort-by">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+
+
+      
+          </li>
+        <li >
+        <form action="/campgrounds" method="GET" class="input-group">
+          <input type="text" id="searchbar" class="form-control mx-auto input" type="text" name="search" placeholder="Search Campgrounds..." aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-danger" id="search-btn" type="submit">
+              
+            
+                </button>
+          </div>
+        </form>
+      </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+  
+
+
+
+    <!-- campground seaech bar end  -->
+
+    <!-- //  starting dispalying campground  -->
+  <!-- conatiner start  -->
+      <div class="container">
+        <div class="row camp-layout">
+            
+
+
+            <% for(let campground of campgrounds){ %>
+
+                <div class="col-md-5  col-lg-4 col-sm-12 mx-auto">
+                    <div class="card mb-3 shadow-sm">
+
+                        <% if(campground.images.length>0) {%>
+                            <a href="/campgrounds/<%=campground._id%>">
+                                <img class="card-img-top camp-image"  src="<%=campground.images[0].url%>" alt="">
+                            </a>
+                        <% } %>
+
+
+
+
+                                <div class="card-body">
+
+                                    <a href="/campgrounds/<%=campground._id%>">
+                                        <h5 class="card-title text-capitalize">
+                                            <%=campground.title %>
+                                                <small class="text-muted float-end">$<%=campground.price%> </small>
+                                        </h5>
+                                    </a>
+
+                                    <p class="card-subtitle">
+                                        <a href="/campgrounds/<%=campground._id%>">
+                                            <small class="text-muted">
+                                                <%=campground.location %>
+                                            </small>
+                                        </a>
+                                    </p>
+                                    <p class="text-start text-danger">
+                                       <small>
+                                        <i class="fas fa-star "></i>  <i class="fas fa-star "></i>  <i class="fas fa-star "></i>  <i class="fas fa-star "></i>  <i class="fas fa-star "></i> 
+                                       </small>
+                                    </p>
+
+                                </div>
+                    </div>
+                </div>
+
+
+                <% } %>
+        </div>
+      </div>
+
+
+      <script>
+        const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
+        const campgrounds = {features:  <%- JSON.stringify(campgrounds) %> };
+    </script>
+
+
+      <script src="/javascripts/clustermap.js"></script>
