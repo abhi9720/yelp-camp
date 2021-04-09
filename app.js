@@ -31,8 +31,7 @@ const userRoutes =  require('./routes/users');
 
 const MongoDBStore = require('connect-mongo');
 
-const dbUrl =  process.env.DB_URL;
-//'mongodb://localhost:27017/yelp-camp' ;
+const dbUrl =   process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp' ;
 // console.log( );
 //   process.env.DB_URL ||
 // 'mongodb://localhost:27017/yelp-camp';
@@ -90,8 +89,7 @@ const sessionConfig = {
         //         secret,
 
         // }),
-        name: 'session',
-       
+        name: 'session',       
         resave: false,
         saveUninitialized: true,
         cookie: {
@@ -157,7 +155,7 @@ app.use(
                 "'self'",
                 "blob:",
                 "data:",
-                "https://res.cloudinary.com/douqbebwk/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT! 
+                "https://res.cloudinary.com/dy3tplaog/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT! 
                 "https://images.unsplash.com",
             ],
             fontSrc: ["'self'", ...fontSrcUrls],

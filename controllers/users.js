@@ -21,7 +21,11 @@ module.exports.registerUser  =  async (req, res, next) => {
 }
 
 module.exports.renderLogin =   (req, res) => {
-    res.render('users/login');
+    
+        return res.render('users/login');
+   
+
+    
 } 
 
 module.exports.login =  (req, res) => {
