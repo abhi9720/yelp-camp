@@ -1,12 +1,8 @@
 <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light bg-white shadow" >
   <div class="container">
 
-
-
-
     <span class="nav-brand-title" href="/">YelpCamp</span>
-
-
+  
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -27,8 +23,6 @@
         </li>
       </ul>
 
-
-
       <ul class="navbar-nav ms-auto">
         <% if(!currentUser) { %>
 
@@ -42,31 +36,26 @@
           <% } else { %>
 
             <li class="nav-item dropdown">
-
               <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-capitalize" href="#" id="navbarDarkDropdownMenuLink"
-                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class='fas fa-user-circle'></i>
-                    <%=currentUser.username %>
+                    role="button" data-bs-toggle="dropdown" aria-expanded="false">                    
+                    <b><%=currentUser.username.toUpperCase() %></b>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-light bg-light " aria-labelledby="navbarDarkDropdownMenuLink">
                     <li><a type="button" class="dropdown-item" href="#">Profile</a></li>
                     <li>
                       <hr class="dropdown-divider">
                     </li>
-                    <li><a type="button" class="dropdown-item fas" href="/logout">Logout &#xf4fa; </a></li>
+                    <li><a type="button" class="dropdown-item" href="/logout">Logout </a></li>
                   </ul>
                 </li>
               </ul>
 
 
-
               <% } %>
       </ul>
     </div>
-
-
 
   </div>
 </nav>
