@@ -1,28 +1,15 @@
-
-body{
-  min-height: 100vh;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Verdana', sans-serif;
 }
+ body{
+  background-color: red;
+ }
 
-.input{
-
-  border-color: teal  ;
-}
-
-.login-btn{
-background-color: white;
-border-color: rgb(0, 136, 199);
-color: rgb(0, 136, 199);
-border-radius: 25px;
-padding:2px 14px  ;
-font-size: 1.5rem;
-
-
-
-
-}
-
-.login-btn:hover{
-
-  background-color:  rgb(0, 136, 199);
-
-}
+ .nav-btn{
+  color: #fff;
+  background-color: #ec5252;
+  border: 1px solid transparent;
+ }

@@ -3,9 +3,6 @@ if(process.env.NODE_ENV !="production{"){
 }
 
 
- 
-
-//console.log(process.env.SECRET);
 
 const express = require('express'); // v
 const path = require('path'); // v
@@ -38,7 +35,6 @@ const dbUrl =   process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp' ;
 
 
 // connecting mongoose 
-// 'mongodb://localhost:27017/yelp-camp'
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useCreateIndex: true,
