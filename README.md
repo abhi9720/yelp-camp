@@ -51,16 +51,12 @@ A Node.js Project from Udemy Web Development course-By Colt Steele. It is an Nod
   2. Install MongoDb
   3. Create Cloudinary Account to get Create a cloudinary account to get an API key and secret code
   4. Create .env file then enter all detail you got from  Cloudinary Account.   
-    `
-     CLOUDINARY_CLOUD_NAME = name                                                                                           
-     CLOUDINARY_KEY = Key                                                                                                       
-     CLOUDINARY_SECRET = secret 
-    `
-    
-   5.Install dependencies                                                                                                                         
-        `npm install                                                                                                                   `
-        
-   6.Run locally                                                                                                                                            
+    `CLOUDINARY_CLOUD_NAME = name
+     CLOUDINARY_KEY = Key
+     CLOUDINARY_SECRET = secret  `    
+  5. Install dependencies                                                                                                                         
+        `npm install                                                                                                                   `        
+  6. Run locally                                                                                                                                            
       `nodemon app.js`
   
     
