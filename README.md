@@ -57,10 +57,10 @@ A Node.js Project from Udemy Web Development course-By Colt Steele. It is an Nod
      CLOUDINARY_SECRET = secret 
     `
     
-  5.Install dependencies                                                                                                                         
-     `npm install                                                                                                                   `
-     
-  6.Run locally
+   5.Install dependencies                                                                                                                         
+        `npm install                                                                                                                   `
+        
+   6.Run locally                                                                                                                                            
       `nodemon app.js`
   
     
