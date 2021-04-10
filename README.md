@@ -27,7 +27,7 @@ A Node.js Project from Udemy Web Development course-By Colt Steele. It is an Nod
   
 ## Features
   * Authentication:
-    * Allow User to Register will email Id and Unique user name
+    * Allow User to Register with email Id and Unique user name
     * Allow user to login and logout.
   * Authorization
     * User not allowed to delete or edit campground of other User
@@ -41,7 +41,7 @@ A Node.js Project from Udemy Web Development course-By Colt Steele. It is an Nod
   * Basic Functionalities
     * User can manage camp location on geo map
     * User can take help of cluster map to search campground
-    * User can seach camp and sort them bases on rating (Working on it).
+    * User can seach camp and sort them on the bases of rating (Working on it).
  
  
  
