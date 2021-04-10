@@ -1,10 +1,10 @@
-## Yelp Camp
+# Yelp Camp
 A Node.js Project from Udemy Web Development course-By Colt Steele. It is an Nodejs project following Model-View-Controller(MVC) architecture,allowing user to do full crud operations- login user, adding campground , adding review , deleting camp , rating camp , upload images and many more.
 
-# Live Demo
+## Live Demo
   Click for Live Demo - [yelp-camp](https://yelpcamp-by-abhishek.herokuapp.com/).
 
-# Built With
+## Built With
  ### Front End
   * HTML5
   * CSS3
@@ -25,7 +25,7 @@ A Node.js Project from Udemy Web Development course-By Colt Steele. It is an Nod
   * ejs-mate
 
   
-# Features
+## Features
   * Authentication:
     * Allow User to Register will email Id and Unique user name
     * Allow user to login and logout.
