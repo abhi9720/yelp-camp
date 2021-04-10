@@ -40,7 +40,7 @@ A Node.js Project from Udemy Web Development course-By Colt Steele. It is an Nod
     * Get flash message as per user intraction will app  
   * Basic Functionalities
     * User can manage camp location on geo map
-    * user can take help of cluster map to search map to seach campground
+    * User can take help of cluster map to search campground
     * User can seach camp and sort them bases on rating (Working on it).
  
  
@@ -51,13 +51,19 @@ A Node.js Project from Udemy Web Development course-By Colt Steele. It is an Nod
   2. Install MongoDb
   3. Create Cloudinary Account to get Create a cloudinary account to get an API key and secret code
   4. Create .env file then enter all detail you got from  Cloudinary Account.   
-    `CLOUDINARY_CLOUD_NAME = name                                                                                           
+    `
+     CLOUDINARY_CLOUD_NAME = name                                                                                           
      CLOUDINARY_KEY = Key                                                                                                       
-     CLOUDINARY_SECRET = secret `       
-  5.Install dependencies
-    `npm i`
+     CLOUDINARY_SECRET = secret 
+    `
     
-  6.Run on CMD                                                                                                                                  
-    `nodemon app.js                                                                                                                     `
+  5.Install dependencies                                                                                                                         
+     `npm install                                                                                                                   `
+     
+  6.Run locally
+      `nodemon app.js`
+  
+    
+   
      
     
