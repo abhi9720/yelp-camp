@@ -53,11 +53,10 @@ A Node.js Project from Udemy Web Development course-By Colt Steele. It is an Nod
   4. Create .env file then enter all detail you got from  Cloudinary Account.                                                              
     `CLOUDINARY_CLOUD_NAME = name                                                                                           
     CLOUDINARY_KEY = Key                                                                                                       
-    CLOUDINARY_SECRET = secret 
-    `
-  4.Install dependencies
+    CLOUDINARY_SECRET = secret                                                                                                            `
+  5.Install dependencies
     `npm i`
-  5 Run on CMD
+  6 Run on CMD
     `nodemon app.js                                                                                                                     `
      
     
