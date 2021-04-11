@@ -1,12 +1,13 @@
 <% layout('layout/boilerplate') %>
 
   <link rel="stylesheet" href="/stylesheets/stars.css">
+  
 
 
-  <div class="container">
+  <div class="container mb-5">
 
 
-    <h5 class="" id="camp-title-head">
+    <h5 class="text-capitalize" id="camp-title-head">
       <%= campground.title %>
     </h5>
 
@@ -74,7 +75,7 @@
 
                   <a type="button" class="reset dropdown-toggle" id="menu-icon" data-bs-toggle="dropdown"
                     aria-expanded="false">
-                    <small>edit</i></small>
+                    <small><i class="fas fa-ellipsis-v"></i></small>
                     <!-- menu icon -->
                   </a>
 
@@ -360,5 +361,5 @@
   </script>
 
 <script src="/javascripts/validaterating.js"></script>
-  <script src="/javascripts/showPageMap.js"></script>
+<script src="/javascripts/showpagemap.js"></script>
   

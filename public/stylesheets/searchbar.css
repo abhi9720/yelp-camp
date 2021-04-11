@@ -1,16 +1,15 @@
 #sort-btn{
-  font-size: 20px;
-  border: 1px solid rgb(153, 151, 148);
-  padding:0.2rem 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 26px;
+  border: 1px solid rgb(22, 21, 21);
+  padding:0.4rem 1.5rem;
   margin-right: 1rem;
   font-weight: 300;
-  background-color: transparent;
-  display: flex;
-
-  border-radius: 2rem; 
-  color:rgb(192, 24, 24);;
   
-  background-color: rgb(241, 241, 241);
+  display: flex;
+  border-radius: 5px;
+  color:rgb(31, 30, 30);;  
+  background-color: rgb(255, 255, 255);
 }
   
 #search-btn{
@@ -20,19 +19,47 @@
     cursor: pointer;
     font-size: 1.7rem;
     position: relative;
-    top: 0;
+    top: 3;
     left: 0;
-    height: 50px;
+    height: 54px;
     width: 50px;
+    margin-top: 4px;
     
   }
 
   
   #searchbar{
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.5rem;
     font-weight: 400;
     letter-spacing: 1px;
-    
+    margin-top: 4px;
     border: 2px solid rgb(88, 82, 82);
   }
+
+  #navbar-search{
+    background-color: rgba(255, 255, 255, 0.253);
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    padding:15px;
+    
+    -webkit-box-shadow: -1px 5px 5px 0px rgba(224,220,224,0.58);
+    -moz-box-shadow: -1px 5px 5px 0px rgba(224,220,224,0.58);
+    box-shadow: -1px 5px 5px 0px rgba(224,220,224,0.58);
+  }
+
+
+
+
+@media(max-width:740px){
+  #sort-btn{
+    padding:0.2rem 1.1rem; ;
+    margin-right: 4px;
+    background-color: white;
+    border:0px;
+
+  }
+  #searchbar{
+    font-size: 1rem;
+  }
+}

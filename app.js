@@ -107,7 +107,8 @@ const scriptSrcUrls = [
     "https://kit.fontawesome.com",
     "https://cdnjs.cloudflare.com",
     "https://cdn.jsdelivr.net",
-    
+    "https://use.fontawesome.com/"
+
 
     
 ];
@@ -121,7 +122,7 @@ const styleSrcUrls = [
     
     "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css",
     "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css",
-    
+    "https://use.fontawesome.com/"
     
 
 

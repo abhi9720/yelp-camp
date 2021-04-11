@@ -40,14 +40,14 @@
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-capitalize fw-bold" href="#" id="navbarDarkDropdownMenuLink"
                     role="button" data-bs-toggle="dropdown" aria-expanded="false">                    
-                    <%=currentUser.username%>
+                    <i class="fa fa-fw fa-user"></i> <%=currentUser.username%>
                   </a>
-                  <ul class="dropdown-menu dropdown-menu-light bg-light " aria-labelledby="navbarDarkDropdownMenuLink">
-                    <li><a type="button" class="dropdown-item" href="#">Profile</a></li>
+                  <ul class="dropdown-menu dropdown-menu-white bg-white " aria-labelledby="navbarDarkDropdownMenuLink">
+                    <li><a type="button" class="c dropdown-item" href="#">Profile</a></li>
                     <li>
                       <hr class="dropdown-divider">
                     </li>
-                    <li><a type="button" class="dropdown-item" href="/logout">Logout </a></li>
+                    <li><a type="button" class="nav-link dropdown-item" href="/logout">Logout </a></li>
                   </ul>
                 </li>
               </ul>
