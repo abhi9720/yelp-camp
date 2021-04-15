@@ -40,20 +40,36 @@ body {
     background: none;
     color: #ffa260;
     border: 2.5px solid;
-    padding: 1em 2em;
-    font: 1em;
-    transition: all 0.2s;
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    transition: all 0.5s;
     
 }
 .home-btn-view:hover{
     border-color: #f1ffc5;
-    color: white;
+    color: #f1ffc5;
+    font-size: 1.5rem;
     box-shadow: 0 0.5em 0.5em  -0.4em #f1ffc5;
-    transform: translateY(-0.2em);
+    transform: translateY(-0.1em);
     cursor: pointer;
 }
 
 .lead{
     display: block
     
+}
+
+
+body {
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

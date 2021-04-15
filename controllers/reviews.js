@@ -23,5 +23,6 @@ module.exports.deleteReview =  async(req,res)=>{
     await Review.findByIdAndDelete(reviewId);
     
     req.flash('reviewflash','Review Deleted');
-    res.redirect(`/campgrounds/${id}`);       
+    res.redirect(`/campgrounds/${id}`);
+           
  }

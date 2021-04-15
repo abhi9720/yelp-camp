@@ -32,7 +32,7 @@
 
     <div class="row d-flex" >
 
-      <div class="col-md-2">
+      <div class="col-md-2 d-inline-block">
 
         <ul class="navbar-nav mb-2 mb-lg-0">
 
@@ -43,12 +43,14 @@
               <button id="sort-btn" class="dropdown-toggle" type="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
 
-                Sort By &#9660;
+                Sort By   <small class="ms-3" style="color:  #77777796;;"> &#9660;</small>
               </button>
-              <ul class="dropdown-menu" aria-labelledby="sort-by">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <ul class="dropdown-menu bg-light" aria-labelledby="sort-by">
+                <li><a class="dropdown-item" href="#">Most Visted</a></li>
+                <li><a class="dropdown-item" href="#">5 star</a></li>
+                <li><a class="dropdown-item" href="#">4 Star</a></li>
+                
+                
               </ul>
             </div>
 
@@ -60,10 +62,10 @@
 
       </div>
 
-      <div class="col-md-9">
+      <div class="col-md-10 d-inline-block ">
 
-        <form action="/campgrounds" method="GET" class="input-group" class="d-flex">
-          <input type="text" id="searchbar" class="form-control mx-auto input" type="text" name="search"
+        <form action="/campgrounds" method="GET" class="input-group" >
+          <input type="text" id="searchbar" class="form-control" type="text" name="search"
             placeholder="Search Campgrounds..." aria-label="Search">
           <div class="input-group-append">
             <button class="btn btn-danger" id="search-btn" type="submit">

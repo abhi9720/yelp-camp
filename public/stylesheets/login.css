@@ -13,3 +13,15 @@
   background-color: #ec5252;
   border: 1px solid transparent;
  }
+ #login-btn{
+   width: 100%;
+   padding: .7rem 2rem;
+   margin-bottom: 1rem;
+ }
+
+ #signup-btn{
+   background: #2188ff;
+  width: 100%;
+  padding: .7rem 2rem;
+  margin-bottom: 1rem;
+ }

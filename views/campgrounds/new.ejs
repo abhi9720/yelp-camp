@@ -1,33 +1,34 @@
 <% layout('layout/boilerplate') %>
   <!-- so we are injecting this content into our boiler plate    -->
-  <div class="container shadow mt-5">
 
-    <form action="/campgrounds" method="POST" novalidate class="needs-validation" enctype="multipart/form-data">
-     
-      <div class="row form">
+
+
+  <form action="/campgrounds" method="POST" novalidate class="needs-validation" enctype="multipart/form-data">
+
+    <div class="container ">
+      <div class="row">
         <span class="text-center" id="newcamp-title">New Campground</span>
-        
-      
-        <!-- this take 3 col and we offset it by 3 it comes to middle  -->
-        
 
-        <div class="col-md-12 col-lg-6 mx-auto">
-         
+        <div class="col-md-7  shadow bg-white form mx-auto">
+
+
+
+
+
           <div class="mb-3">
             <label class="form-label" for="title">Title</label>
-            <input class="form-control input"  type="text" id="title" name="campground[title]" required>
+            <input class="form-control input2" type="text" id="title" name="campground[title]" required>
             <div class="valid-feedback">
               Looks good!
             </div>
             <div class="invalid-feedback">
               Enter Campground Name
             </div>
-
-
           </div>
+
           <div class="mb-3">
             <label class="form-label" for="Location">Location</label>
-            <input class="form-control input" type="text" id="location" name="campground[location]" required>
+            <input class="form-control input2" type="text" id="location" name="campground[location]" required>
             <div class="valid-feedback">
               Looks good!
             </div>
@@ -39,27 +40,11 @@
 
 
 
-
-
-          <!-- <div class="mb-1">
-                  <label class="form-label" for="image">Image URL</label>
-                  <input class="form-control" type="text" id="location" name="campground[image]" placeholder="Image-Url" required>
-                  <div class="valid-feedback">
-                    Looks good!
-                  </div>
-                  <div class="invalid-feedback">
-                    Please provide a valid Image Url.
-                  </div>
-                
-                </div> -->
-
-
-
           <div class="mb-3">
             <label class="form-label" for="price">Campground Price</label>
             <div class="input-group">
               <span class="input-group-text" id="price-label">$</span>
-              <input type="number" class="form-control input" id="price" placeholder="0" min="0" aria-label="Price"
+              <input type="number" class="form-control input2" id="price" placeholder="0" min="0" aria-label="Price"
                 aria-describedby="price-label" name="campground[price]" required>
               <div class="valid-feedback">
                 Looks good!
@@ -73,28 +58,17 @@
           </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
           <div class="mb-4">
             <label class="form-label" for="description">Description </label>
-            <textarea class="form-control input" type="text" id="newcamp-description" minlength="15" name="campground[description]"
-              required></textarea>
+            <textarea class="form-control input" type="text" id="newcamp-description" minlength="15"
+              name="campground[description]" required></textarea>
 
             <div class="valid-feedback">
               Looks good!
             </div>
 
             <div class="invalid-feedback">
-             Description should be greater than 20 chracter
+              Description should be greater than 20 chracter
             </div>
 
           </div>
@@ -105,34 +79,34 @@
 
 
 
-
-
-
-
         </div>
 
 
-        <!-- // file upload section -->
 
-        <div class="col-md-12 col-lg-6 my-5 mx-auto">
+        <div class="col-md-5  mx-auto">
+          <div class="input-group mt-5">
+            <input type="file" class="form-control input " name="image" id="upload-Images" multiple>
+          </div>
+        </div>
+        
 
-          <div class="input-group mb-4">
-            <input type="file" class="form-control input" name="image" id="upload-Images" multiple>            
-          </div>          
+
+
       </div>
 
       <div class="new-form-btn">
-        <a  id="add-camp-btn2" type="button"  href="/campgrounds">Back</a>
+        <a id="add-camp-btn2" type="button" href="/campgrounds">Back</a>
         <button id="add-camp-btn1"> Add Campground </button>
-        
+
 
       </div>
-
-        </div>
-
+    </div>
 
 
-    </form>
 
 
-  </div>
+    </div>
+
+  </form>
+
+  <!-- // file upload section -->
