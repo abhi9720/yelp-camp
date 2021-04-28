@@ -63,7 +63,7 @@
 
 
           <div class="card-body">
-            <h5 class="card-title">
+            <h5 class="card-title text-capitalize">
               <%= campground.title %>
 
 
@@ -103,7 +103,7 @@
                           After Deletion data cannot be recover back!!!
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Close</button>
 
 
                           <form class="" action="/campgrounds/<%= campground._id%>?_method=DELETE" method="POST">
@@ -147,7 +147,7 @@
             </ul>
 
             <span id="author" class="float-end"> Submitted by
-              <a href="" class="card-link">
+              <a href="" class="card-link text-capitalize fw-4">
                 <%= campground.author.username %>
               </a>
             </span>
@@ -182,7 +182,7 @@
         <% if(currentUser){ %>
   
   
-          <button type="button" class="btn btn-danger mt-4" data-bs-toggle="modal" data-bs-target="#reviewformmodal">
+          <button type="button" class="reset mt-4 leave-review-btn" data-bs-toggle="modal" data-bs-target="#reviewformmodal">
             Leave a Review
           </button>
 
@@ -259,7 +259,7 @@
            
 
 
-        <div class="mb-5">
+        <div class="mb-5 display-review">
 
           <% if(!campground.reviews.length){ %>
             <h5 class=" mt-5 text-center p-4 "> No Reviews</h5>
@@ -283,54 +283,58 @@
               <% campground.reviews.reverse() %>
 
 
-              <ul class="list-group list-group-flush">
+           <div class="review-pannel">
+            <ul class="list-group list-group-flush " >
 
-                  <% for(let review of campground.reviews){ %>
+              <% for(let review of campground.reviews){ %>
 
-                    <li class="list-group-item review ">
+                <li class="list-group-item review ">
 
-                      <span class="text-capitalize  review-user">
+                  <span class="text-capitalize  review-user">
 
-                        <i class='fas fa-user-circle'></i>
-                        <a href="#" class="review-user">
-                          <%=review.author.username %>
-                        </a>
+                    <i class='fas fa-user-circle'></i>
+                    <a href="#" class="review-user">
+                      <%=review.author.username %>
+                    </a>
 
-                      </span>
+                  </span>
 
-                      <span class="starability-result float-end mx-auto" data-rating="<%= review.rating %>">
-                        Rated: <%= review.rating %> stars
-                      </span>
+                  <span class="starability-result float-end mx-auto" data-rating="<%= review.rating %>">
+                    Rated: <%= review.rating %> stars
+                  </span>
 
-                      <span class="mt-1 review-text">
+                  <span class="mt-1 review-text">
 
-                        <br>  
-                        <%= review.body.charAt(0).toUpperCase() +review.body.slice(1) %>
+                    <br>  
+                    <%= review.body.charAt(0).toUpperCase() +review.body.slice(1) %>
 
 
-                          <%if(currentUser && review.author.equals(currentUser._id)) { %>
-                         <div>
-                          <form class="" id="review-delete-form"
-                          action="/campgrounds/<%=campground._id%>/reviews/<%=review._id%>?_method=DELETE"
-                          method="POST">
-                          <button type="submit" class="" id="delete-review">
-                            Delete
-                          </button>
-                        </form>
+                      <%if(currentUser && review.author.equals(currentUser._id)) { %>
+                     <div>
+                      <form class="" id="review-delete-form"
+                      action="/campgrounds/<%=campground._id%>/reviews/<%=review._id%>?_method=DELETE"
+                      method="POST">
+                      <button type="submit" class="" id="delete-review">
+                        Delete
+                      </button>
+                    </form>
 
-                         </div>
+                     </div>
 
-                            <% } %>
-                      </span>
+                        <% } %>
+                  </span>
 
-                    </li>
+                </li>
 
-                    <% } %>
+                <% } %>
 
-                </ul>
+            </ul>
+           </div>
 
 
         </div>
+
+
       </div>
 
     

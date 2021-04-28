@@ -14,14 +14,44 @@
   border: 1px solid transparent;
  }
  #login-btn{
-   width: 100%;
-   padding: .7rem 2rem;
-   margin-bottom: 1rem;
+  background: #44ce38;
+  display: inline-block;
+   font-size: 16px;
+   
+   color: #000000;
+   padding: 10px 25px;
+   white-space: nowrap;
+ width: 100%;
+ padding: .7rem 2rem;
+ margin-bottom: 1rem;
+ transition: background-color 0.2s ease-out;
+ -webkit-transition: background-color 0.2s ease-out
  }
 
  #signup-btn{
    background: #2188ff;
+   display: inline-block;
+    font-size: 16px;
+    
+    color: #000000;
+    padding: 10px 25px;
+    white-space: nowrap;
   width: 100%;
   padding: .7rem 2rem;
   margin-bottom: 1rem;
+  transition: background-color 0.2s ease-out;
+  -webkit-transition: background-color 0.2s ease-out
+
  }
+
+ #signup-btn:hover{
+background-color: #3a85ff7a;
+
+
+ }
+
+ #login-btn:hover{
+  background-color: #45ce38d0;;
+  
+  
+   }
