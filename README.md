@@ -4,7 +4,10 @@ A Node.js Project from Udemy Web Development course-By Colt Steele. It is an Nod
 ## Live Demo
   Click for Live Demo - [yelp-camp](https://yelp-campbase.herokuapp.com/).
   ![camp-home](/uploads/home.jpg)
-  ![camp](uploads/camp img.jpg)
+  ***
+  
+  
+  ![camp](/uploads/camp_img.jpg)
   
 
 ## Built With
