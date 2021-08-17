@@ -1,57 +1,74 @@
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: 'Verdana', sans-serif;
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Verdana', sans-serif;
 }
- body{
-  background-color: red;
- }
+body {
+	background-color: red;
+}
 
- .nav-btn{
-  color: #fff;
-  background-color: #ec5252;
-  border: 1px solid transparent;
- }
- #login-btn{
-  background: #44ce38;
-  display: inline-block;
-   font-size: 16px;
-   
-   color: #000000;
-   padding: 10px 25px;
-   white-space: nowrap;
- width: 100%;
- padding: .7rem 2rem;
- margin-bottom: 1rem;
- transition: background-color 0.2s ease-out;
- -webkit-transition: background-color 0.2s ease-out
- }
+.nav-btn {
+	color: #fff;
+	background-color: #ec5252;
+	border: 1px solid transparent;
+}
+#login-btn {
+	background: #44ce38;
+	display: inline-block;
+	font-size: 16px;
 
- #signup-btn{
-   background: #2188ff;
-   display: inline-block;
-    font-size: 16px;
-    
-    color: #000000;
-    padding: 10px 25px;
-    white-space: nowrap;
-  width: 100%;
-  padding: .7rem 2rem;
-  margin-bottom: 1rem;
-  transition: background-color 0.2s ease-out;
-  -webkit-transition: background-color 0.2s ease-out
+	color: #000000;
+	padding: 10px 25px;
+	white-space: nowrap;
+	width: 100%;
+	padding: 0.7rem 2rem;
+	margin-bottom: 1rem;
+	transition: background-color 0.2s ease-out;
+	-webkit-transition: background-color 0.2s ease-out;
+}
 
- }
+#signup-btn {
+	background: #2188ff;
+	display: inline-block;
+	font-size: 16px;
 
- #signup-btn:hover{
-background-color: #3a85ff7a;
+	color: #000000;
+	padding: 10px 25px;
+	white-space: nowrap;
+	width: 100%;
+	padding: 0.7rem 2rem;
+	margin-bottom: 1rem;
+	transition: background-color 0.2s ease-out;
+	-webkit-transition: background-color 0.2s ease-out;
+}
 
+#signup-btn:hover {
+	background-color: #3a85ff7a;
+}
 
- }
+#login-btn:hover {
+	background-color: #45ce38d0;
+}
 
- #login-btn:hover{
-  background-color: #45ce38d0;;
-  
-  
-   }
+.card {
+	box-shadow: 0 2px 11px 0 rgb(0 0 0 / 35%);
+}
+
+.form-control {
+	outline: none;
+	border: 2px solid transparent;
+	border-radius: 0px;
+	font-size: 1.2rem;
+	padding: 10px 15px;
+	background-color: rgba(211, 211, 211, 0.315);
+	border: 2px solid rgba(211, 211, 211, 0.849);
+	transition: all 0.4s ease;
+}
+
+.form-control :focus {
+	font-weight: 500;
+	color: rgb(10, 29, 51);
+	border: 2px solid rgba(34, 148, 255, 0.336);
+	background-color: white;
+}

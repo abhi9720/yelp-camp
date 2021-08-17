@@ -1,18 +1,13 @@
 <% layout('layout/boilerplate') %>
 
   <link rel="stylesheet" href="/stylesheets/stars.css">
-  
+
 
 
   <div class="container mt-5 mb-5">
 
-
-   
-
-
-
     <div class="row">
-      <h1 class="text-capitalize " >
+      <h1 class="text-capitalize ">
         <%= campground.title %>
       </h1>
       <div class="col-md-7 mx-auto">
@@ -67,63 +62,63 @@
               <%= campground.title %>
 
 
-              <%  if( currentUser && campground.author.equals(currentUser._id))  {%>
+                <% if( currentUser && campground.author.equals(currentUser._id)) {%>
 
 
-                <div class="btn-group dropup float-end ">
+                  <div class="btn-group dropup float-end ">
 
 
-                  <a type="button" class="reset dropdown-toggle" id="menu-icon" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    <small><i class="fas fa-ellipsis-v"></i></small>
-                    <!-- menu icon -->
-                  </a>
+                    <a type="button" class="reset dropdown-toggle" id="menu-icon" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      <small><i class="fas fa-ellipsis-v"></i></small>
+                      <!-- menu icon -->
+                    </a>
 
-                  <ul class="dropdown-menu ">
+                    <ul class="dropdown-menu ">
 
-                    <li>
-                      <a href="<%=campground._id%>/edit" class="card-link btn reset mb-2 ms-1">Edit</a>
-                    </li>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="reset ms-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                      Delete
-                    </button>
-                  </ul>
+                      <li>
+                        <a href="<%=campground._id%>/edit" class="card-link btn reset mb-2 ms-1">Edit</a>
+                      </li>
+                      <!-- Button trigger modal -->
+                      <button type="button" class="reset ms-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Delete
+                      </button>
+                    </ul>
 
-                  <!-- Modal -->
-                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title text-danger" id="exampleModalLabel">Delete</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          After Deletion data cannot be recover back!!!
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Close</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title text-danger" id="exampleModalLabel">Delete</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            After Deletion data cannot be recover back!!!
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Close</button>
 
 
-                          <form class="" action="/campgrounds/<%= campground._id%>?_method=DELETE" method="POST">
-                            <button type="submit" class="btn btn-danger ">delete</button>
-                          </form>
+                            <form class="" action="/campgrounds/<%= campground._id%>?_method=DELETE" method="POST">
+                              <button type="submit" class="btn btn-danger ">delete</button>
+                            </form>
 
+                          </div>
                         </div>
                       </div>
                     </div>
+
                   </div>
 
-                </div>
-
-            <% } %> 
+                  <% } %>
 
 
 
-                <span class="float-end  mx-3"> <b>$</b> <span class="text-danger">
-                    <%=campground.price%>/night
-                  </span> </span>
+                    <span class="float-end  mx-3"> <b>$</b> <span class="text-danger">
+                        <%=campground.price%>/night
+                      </span> </span>
 
             </h5>
 
@@ -180,13 +175,15 @@
 
 
         <% if(currentUser){ %>
-  
-  
-          <button type="button" class="reset mt-4 leave-review-btn" data-bs-toggle="modal" data-bs-target="#reviewformmodal">
+
+          
+
+          <button type="button" class="reset mt-4 leave-review-btn bouncy" data-bs-toggle="modal"
+            data-bs-target="#reviewformmodal">
             Leave a Review
           </button>
 
-          <div class="modal fade " id="reviewformmodal"  aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade " id="reviewformmodal" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header">
@@ -194,160 +191,142 @@
                   <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
                 </div>
                 <div class="modal-body">
-                  <form   id="review-form" action="/campgrounds/<%= campground._id %>/reviews" class="needs-validation bg-white " method="POST"
-                    novalidate>
+                  <form id="review-form" action="/campgrounds/<%= campground._id %>/reviews"
+                    class="needs-validation bg-white " method="POST" novalidate>
                     <!--  -->
                     <div class="review-panel">
-                              <!-- star rating -->
-                     
-                        
-                        <fieldset class="starability-basic mt-3 mx-auto">
-                          <!-- mt-2 mx-auto -->
-      
-                          <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1"
-                            checkedaria-label="No rating." />
-                          <input type="radio" id="first-rate1" name="review[rating]" value="1" />
-                          <label for="first-rate1" title="Terrible">1 star</label>
-                          <input type="radio" id="first-rate2" name="review[rating]" value="2" />
-                          <label for="first-rate2" title="Not good">2 stars</label>
-                          <input type="radio" id="first-rate3" name="review[rating]" value="3" />
-                          <label for="first-rate3" title="Average">3 stars</label>
-                          <input type="radio" id="first-rate4" name="review[rating]" value="4" />
-                          <label for="first-rate4" title="Very good">4 stars</label>
-                          <input type="radio" id="first-rate5" name="review[rating]" value="5" />
-                          <label for="first-rate5" title="Amazing">5 stars</label>
-                          
-                        </fieldset>
-                      
-                          
-                        
-                      
-                                    <!-- review text area  -->
-                      
-                        
-                          
-                            <textarea  name="review[body]" id="text-body"  class="form-control" placeholder="Leave a comment here"  autocorrect='on' minlength='10'  required ></textarea>
-                            
-      
-                          <!-- id="text-body" -->
-                       
-                        <div class="invalid-feedback">
-                         Enter Minmum 20  Character 
-                        </div>
-      
-                      
-      
-                    </div>        
-                    <small   id="review-feedback"></small>
+                      <!-- star rating -->
+
+
+                      <fieldset class="starability-basic mt-3 mx-auto">
+                        <!-- mt-2 mx-auto -->
+                        <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1"
+                          checkedaria-label="No rating." />
+                        <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+                        <label for="first-rate1" title="Terrible">1 star</label>
+                        <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+                        <label for="first-rate2" title="Not good">2 stars</label>
+                        <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+                        <label for="first-rate3" title="Average">3 stars</label>
+                        <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+                        <label for="first-rate4" title="Very good">4 stars</label>
+                        <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+                        <label for="first-rate5" title="Amazing">5 stars</label>
+                      </fieldset>
+
+                      <!-- review text area  -->
+
+
+
+                      <textarea name="review[body]" id="text-body" class="form-control"
+                        placeholder="Leave a comment here" autocorrect='on' minlength='10' required></textarea>
+
+
+                      <!-- id="text-body" -->
+
+                      <div class="invalid-feedback">
+                        Enter Minmum 20 Character
+                      </div>
+
+
+
+                    </div>
+                    <small id="review-feedback"></small>
                     <!-- review button  -->
                     <div class="modal-footer bd-0">
                       <button type="button" class="reset text-danger" data-bs-dismiss="modal">Close</button>
-                        <button class="ms-3 mt-2" id="add-review-btn">Add Review</button>
-                      </div>
-                              
+                      <button class="ms-3 mt-2" id="add-review-btn">Add Review</button>
+                    </div>
+
                   </form>
                 </div>
 
-               
+
               </div>
             </div>
 
-</div>
-
-          
-       <% } %>
-           
+          </div>
 
 
-        <div class="mb-5 display-review">
-
-          <% if(!campground.reviews.length){ %>
-            <h5 class=" mt-5 text-center p-4 "> No Reviews</h5>
-
-            <% } else{ %>
-
-              <h3 id="review-heading">  
-                Campground Reviews    
-               
-
-                  <% if(reviewflash && reviewflash.length){ %>
-                    <small class="float-end text-danger">
-                      <%= reviewflash %> &#10003
-                    </small>
-                    <% } %>
-                 
-                </h3>
-                
-                <% } %> 
-
-              <% campground.reviews.reverse() %>
+          <% } %>
 
 
-           <div class="review-pannel">
-            <ul class="list-group list-group-flush " >
 
-              <% for(let review of campground.reviews){ %>
+            <div class="mb-5 display-review">
 
-                <li class="list-group-item review ">
+              <% if(!campground.reviews.length){ %>
+                <h5 class=" mt-5 text-center p-4 "> No Reviews</h5>
 
-                  <span class="text-capitalize  review-user">
+                <% } else{ %>
 
-                    <i class='fas fa-user-circle'></i>
-                    <a href="#" class="review-user">
-                      <%=review.author.username %>
-                    </a>
-
-                  </span>
-
-                  <span class="starability-result float-end mx-auto" data-rating="<%= review.rating %>">
-                    Rated: <%= review.rating %> stars
-                  </span>
-
-                  <span class="mt-1 review-text">
-
-                    <br>  
-                    <%= review.body.charAt(0).toUpperCase() +review.body.slice(1) %>
+                  <h3 id="review-heading">
+                    Campground Reviews
 
 
-                      <%if(currentUser && review.author.equals(currentUser._id)) { %>
-                     <div>
-                      <form class="" id="review-delete-form"
-                      action="/campgrounds/<%=campground._id%>/reviews/<%=review._id%>?_method=DELETE"
-                      method="POST">
-                      <button type="submit" class="" id="delete-review">
-                        Delete
-                      </button>
-                    </form>
+                    <% if(reviewflash && reviewflash.length){ %>
+                      <small class="float-end text-danger">
+                        <%= reviewflash %> &#10003
+                      </small>
+                      <% } %>
 
-                     </div>
+                  </h3>
 
-                        <% } %>
-                  </span>
+                  <% } %>
 
-                </li>
-
-                <% } %>
-
-            </ul>
-           </div>
+                    <% campground.reviews.reverse() %>
 
 
-        </div>
+                      <div class="review-pannel">
+                        <ul class="list-group list-group-flush ">
+
+                          <% for(let review of campground.reviews){ %>
+
+                            <li class="list-group-item review ">
+
+                              <span class="text-capitalize  review-user">
+
+                                <i class='fas fa-user-circle'></i>
+                                <a href="#" class="review-user">
+                                  <%=review.author.username %>
+                                </a>
+
+                              </span>
+
+                              <span class="starability-result float-end mx-auto" data-rating="<%= review.rating %>">
+                                Rated: <%= review.rating %> stars
+                              </span>
+
+                              <span class="mt-1 review-text">
+
+                                <br>
+                                <%= review.body.charAt(0).toUpperCase() +review.body.slice(1) %>
 
 
+                                  <%if(currentUser && review.author.equals(currentUser._id)) { %>
+                                    <div>
+                                      <form class="" id="review-delete-form"
+                                        action="/campgrounds/<%=campground._id%>/reviews/<%=review._id%>?_method=DELETE"
+                                        method="POST">
+                                        <button type="submit" class="" id="delete-review">
+                                          Delete
+                                        </button>
+                                      </form>
+
+                                    </div>
+
+                                    <% } %>
+                              </span>
+
+                            </li>
+
+                            <% } %>
+
+                        </ul>
+                      </div>
+            </div>
       </div>
-
-    
-    
-
-
     </div>
-
- 
     <!----------------------- new row started ------------------------------>
-
-
-
   </div>
 
 
@@ -359,11 +338,10 @@
 
 
 
-<script>
+  <script>
     const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
-    const campground = <%-JSON.stringify(campground) %>
-</script>
+    const campground = <%- JSON.stringify(campground) %>
+  </script>
 
-<script src="/javascripts/validaterating.js"></script>
-<script src="/javascripts/showpagemap.js"></script>
-  
+  <script src="/javascripts/validaterating.js"></script>
+  <script src="/javascripts/showpagemap.js"></script>
