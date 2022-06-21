@@ -43,13 +43,7 @@ body {
 
 }
 
-@media (max-width: 991px) {
-  #nav-logo {
-    height: 33px;
-    width: 60px;
-    margin-right: -26px;
-  }
-}
+
 
 .cover-container {
   max-width: 60vw;
@@ -124,5 +118,22 @@ body {
 
   100% {
     opacity: 1;
+  }
+}
+
+
+@media (max-width: 991px) {
+  #nav-logo {
+    height: 33px;
+    width: 60px;
+    margin-right: -26px;
+  }
+
+  .mtn5 {
+    margin-top: 0px !important;
+  }
+
+  .cover-container {
+    max-width: 90vw;
   }
 }
