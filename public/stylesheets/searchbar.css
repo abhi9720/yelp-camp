@@ -1,69 +1,77 @@
-#sort-btn{
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 18px;
-  border: .1px solid #BDBDBD;
-  padding:0.5rem 1.3rem;
-  color: rgba(0, 0, 0, 0.329);
-  font-weight: 300;
-  background-color: #f5f5f5;
-  display: flex;
-  border-radius: 5px;
-  color:rgb(31, 30, 30);;  
-  
+#search-btn {
+
+  border: 0;
+  border-radius: 0px;
+  cursor: pointer;
+  font-size: 2rem;
+  position: relative;
+  height: 50px;
+  width: 50px;
 }
-  
-#search-btn{
-   
-    border: 0;
-    border-radius: 0px;
-    cursor: pointer;
-    font-size: 2rem;
-    position: relative;
-  
-    height: 50px;
-    width: 50px;
-    
-    
-  }
 
-  
-  #searchbar{
-    background-color: #fff;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
-    border-bottom-left-radius: 2px;
-    border: 1px solid #dcdcdc;
-    color: #12302e;
-    font-size: 1rem;
-   
-    width: 80%;
-   
-  }
+#searchinput input {
+  font-weight: 900 !important;
+}
 
-  #navbar-search{
-    /* background-color: rgba(255, 255, 255, 0.253); */
-    margin-bottom: 2rem;
-    margin-top: 1.5rem;
-    padding-bottom:8px;
-   position: static;
-    -webkit-box-shadow: -1px 5px 5px 0px rgba(224,220,224,0.58);
-    -moz-box-shadow: -1px 5px 5px 0px rgba(224,220,224,0.58);
-    box-shadow: -1px 5px 5px 0px rgba(224,220,224,0.58);
-  }
+.searchwrapper {
+  padding: 10px 3px;
+  background-color: white;
+
+  -webkit-box-shadow: -1px 5px 5px 0px rgba(224, 220, 224, 0.58);
+  -moz-box-shadow: -1px 5px 5px 0px rgba(224, 220, 224, 0.58);
+  box-shadow: -1px 5px 5px 0px rgba(224, 220, 224, 0.58);
+  border-radius: 10px;
+}
+
+.searchinput {
+  flex: 1;
+  border: none;
+  outline: none;
+  /* background-color: #f7f7f7; */
+  border: none;
+  color: #191b46fc;
+  padding: 7px 13px;
+  font-weight: 900;
+  text-transform: capitalize;
+
+}
+
+#searchbar {
+  background-color: #fff;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border: 1px solid #dcdcdc;
+  color: #12302e;
+  font-size: 1rem;
+  width: 80%;
+
+}
+
+#navbar-search {
+  /* background-color: rgba(255, 255, 255, 0.253); */
+  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+  padding-bottom: 8px;
+  position: static;
+
+}
 
 
 
 
-@media(max-width:740px){
-  #sort-btn{
-    padding:0.2rem 1.1rem; ;
+@media(max-width:740px) {
+  #sort-btn {
+    padding: 0.2rem 1.1rem;
+    ;
     margin-right: 4px;
-    
-    border:0px;
+
+    border: 0px;
 
   }
-  #searchbar{
+
+  #searchbar {
     font-size: 1rem;
   }
 }

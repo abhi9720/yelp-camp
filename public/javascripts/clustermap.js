@@ -1,11 +1,13 @@
-mapboxgl.accessToken = mapToken;
+mapboxgl.accessToken = "pk.eyJ1IjoibGF6eWNvZGVyMTIiLCJhIjoiY2tuNWpkY2ttMDRyMjMxbXZ0ZHptanI4cSJ9.BGhkt5bLUk1s97N-ZinuhQ"
 var map = new mapboxgl.Map({
     container: 'cluster-map',
     style: 'mapbox://styles/mapbox/light-v10',
     center: [-100.59179687498357, 40.66995747013945],
     zoom: 4
 });
-
+console.log(map);
+console.log(campgrounds);
+console.log(mapToken);
 map.addControl(new mapboxgl.NavigationControl())
 
 map.on('load', function () {
@@ -16,8 +18,8 @@ map.on('load', function () {
         type: 'geojson',
         // Point to GeoJSON data. This example visualizes all M1.0+ earthquakes
         // from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
-        data:campgrounds,
-            // 'https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson',
+        data: campgrounds,
+        // 'https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson',
         cluster: true,
         clusterMaxZoom: 14, // Max zoom to cluster points on
         clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
@@ -42,7 +44,7 @@ map.on('load', function () {
                 15,
                 '#70e000',
                 30,
-                
+
                 '#00b2ca',
                 50,
                 '#f15152',

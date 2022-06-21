@@ -26,65 +26,64 @@
   <!-- -----------------------------------   search nav bar start  --------------------------------------------------------------------------- -->
 
 
-<div id="navbar-search">
-  <div class="container">
+  <div id="navbar-search">
+    <div class="container">
 
 
-    <div class="row d-flex" >
+      <div class="row d-flex justify-content-center">
 
-      <div class="col-md-2 d-inline-block">
+        <!-- <div class="col-md-2 d-inline-block"> -->
 
-        <ul class="navbar-nav mb-2 mb-lg-0">
+        <!-- <ul class="navbar-nav mb-2 mb-lg-0">
 
-          <li class="nav-item dropdown">
+            <li class="nav-item dropdown">
 
 
-            <div class="dropdown">
-              <button id="sort-btn" class="dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
+              <div class="dropdown">
+                <button id="sort-btn" class="dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
 
-                Sort By   <small class="ms-3" style="color:  #77777796;;"> &#9660;</small>
+                  Sort By <small class="ms-3" style="color:  #77777796;;"> &#9660;</small>
+                </button>
+                <ul class="dropdown-menu bg-light" aria-labelledby="sort-by">
+                  <li><a class="dropdown-item" href="#">Most Visted</a></li>
+                  <li><a class="dropdown-item" href="#">5 star</a></li>
+                  <li><a class="dropdown-item" href="#">4 Star</a></li>
+
+
+                </ul>
+              </div>
+
+
+
+            </li>
+          </ul> -->
+
+
+        <!-- </div> -->
+
+        <div class="col-md-10 d-inline-block searchwrapper">
+
+          <form action="/campgrounds/search" class="input-group" id="search-form" method="post">
+            <input name="search" class="searchinput" type="search" placeholder="Type to search..."
+              value="<%= search %>">
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-link border-0 btn-floating">
+                <i class="fas fa-search" style="font-size: 25px;"></i>
               </button>
-              <ul class="dropdown-menu bg-light" aria-labelledby="sort-by">
-                <li><a class="dropdown-item" href="#">Most Visted</a></li>
-                <li><a class="dropdown-item" href="#">5 star</a></li>
-                <li><a class="dropdown-item" href="#">4 Star</a></li>
-                
-                
-              </ul>
             </div>
-
-
-
-          </li>
-        </ul>
+          </form>
+        </div>
 
 
       </div>
 
-      <div class="col-md-10 d-inline-block ">
 
-        <form action="/campgrounds" method="GET" class="input-group" >
-          <input type="text" id="searchbar" class="form-control" type="text" name="search"
-            placeholder="Search Campgrounds..." aria-label="Search">
-          <div class="input-group-append">
-            <button class="btn btn-danger" id="search-btn" type="submit">
-              <i class="fa fa-search"></i>
-
-            </button>
-          </div>
-        </form>
-      </div>
 
 
     </div>
 
-
-
-
   </div>
-
-</div>
 
 
   <!-- -----------------------------------   search nav bar end --------------------------------------------------------------------------- -->
@@ -98,58 +97,69 @@
     <div class="row camp-layout">
 
 
-
-      <% for(let campground of campgrounds){ %>
-
-        <div class="col-md-5  col-lg-4 col-sm-12 mx-auto">
-          <div class="card mb-3 shadow-sm">
-
-            <% if(campground.images.length>0) {%>
-              <a href="/campgrounds/<%=campground._id%>">
-                <img class="card-img-top camp-image" src="<%=campground.images[0].url%>" alt="">
-              </a>
-              <% } %>
-
-
-
-
-                <div class="card-body">
-
-                  <a href="/campgrounds/<%=campground._id%>">
-                    <h5 class="card-title text-capitalize">
-                      <%=campground.title %>
-                        <small class="text-muted float-end">$<%=campground.price%> </small>
-                    </h5>
-                  </a>
-
-                  <p class="card-subtitle">
-                    <a href="/campgrounds/<%=campground._id%>">
-                      <small class="text-muted">
-                        <%=campground.location %>
-                      </small>
-                    </a>
-                  </p>
-                  <p class="text-start text-danger">
-                    <small>
-                      <i class="fas fa-star "></i> <i class="fas fa-star "></i> <i class="fas fa-star "></i> <i
-                        class="fas fa-star "></i> <i class="fas fa-star "></i>
-                    </small>
-                  </p>
-
-                </div>
+      <% if(!campgrounds || campgrounds.length==0){%>
+        <div class="col-md-6  mx-auto mt-4 ">
+          <div class="alert alert-info shadow-sm text-center" role="alert">
+            <h4 class="alert-heading text-center">
+              No Campground Found
+            </h4>
           </div>
         </div>
+        <%}%>
 
 
-        <% } %>
+          <% for(let campground of campgrounds){ %>
+
+            <div class="col-md-5  col-lg-4 col-sm-12 mx-auto">
+              <div class="card mb-3 shadow-sm">
+
+                <% if(campground.images.length>0) {%>
+                  <a href="/campgrounds/<%=campground._id%>">
+                    <img class="card-img-top camp-image" src="<%=campground.images[0].url%>" alt="">
+                  </a>
+                  <% } %>
+
+
+
+
+                    <div class="card-body">
+
+                      <a href="/campgrounds/<%=campground._id%>">
+                        <h5 class="card-title text-capitalize">
+                          <%=campground.title %>
+                            <small class="text-muted float-end">$<%=campground.price%> </small>
+                        </h5>
+                      </a>
+
+                      <p class="card-subtitle">
+                        <a href="/campgrounds/<%=campground._id%>">
+                          <small class="text-muted">
+                            <%=campground.location %>
+                          </small>
+                        </a>
+                      </p>
+                      <p class="text-start text-danger">
+                        <small>
+                          <i class="fas fa-star "></i> <i class="fas fa-star "></i> <i class="fas fa-star "></i> <i
+                            class="fas fa-star "></i> <i class="fas fa-star "></i>
+                        </small>
+                      </p>
+
+                    </div>
+              </div>
+            </div>
+
+
+            <% } %>
     </div>
   </div>
 
 
+
+
   <script>
     const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
-    const campgrounds = { features:  <%- JSON.stringify(campgrounds) %> };
+    const campgrounds = { features: <% - JSON.stringify(campgrounds) %>}
   </script>
 
-
-  <script src="/javascripts/clustermap.js"></script>
+  <script src="/javascripts/clusterMap.js"></script>
