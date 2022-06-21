@@ -5,6 +5,10 @@ const geocoder = mbxGeocoding({ accessToken: mapBoxToken });
 
 const { cloudinary } = require('../cloudinary/');
 
+module.exports.renderMapview = async (req, res) => {
+    const campgrounds = await Campground.find({})
+    res.render("campgrounds/mapview.ejs", { campgrounds, search: '' })
+}
 
 module.exports.index = async (req, res) => {
     const campgrounds = await Campground.find({})

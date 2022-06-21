@@ -19,7 +19,7 @@
 
   <link rel="stylesheet" href="/stylesheets/clustermap.css">
 
-  <div id="cluster-map"> </div>
+
 
 
   <!-- campground search bar start   -->
@@ -154,14 +154,3 @@
             <% } %>
     </div>
   </div>
-
-
-
-
-  <script type="text/javascript">
-    const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
-    const campgrounds = { features: <% - JSON.stringify(campgrounds) %>}
-
-  </script>
-
-  <script src="/javascripts/clusterMap.js"></script>

@@ -20,7 +20,7 @@ router.route('/')
 // })
 
 router.get('/new', isLoggedIn, campgrounds.renderNewForm)
-
+router.get('/mapview', campgrounds.renderMapview)
 router.route('/:id')
     .get(catchAsync(campgrounds.showCampground))
     .put(isLoggedIn, upload.array('image'), isAuthor, validateCampground, catchAsync(campgrounds.updateCampground))

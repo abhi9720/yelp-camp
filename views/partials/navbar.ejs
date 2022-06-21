@@ -18,6 +18,9 @@
         <li id="about" class="nav-item">
           <a class="nav-link " href="/campgrounds"> Campground</a>
         </li>
+        <li id="about" class="nav-item">
+          <a class="nav-link " href="/campgrounds/mapview"> Map View</a>
+        </li>
         <li id="newCampground" class="nav-item">
           <a class="nav-link " href="/campgrounds/new">New Campground</a>
         </li>
@@ -43,20 +46,20 @@
                     <i class="fa fa-user"></i>
                     <%=currentUser.username%>
                   </a>
-                  <ul id="user-list" class="dropdown-menu dropdown-menu-white bd-0" aria-labelledby="user">
-
+                  <ul id="user-list" class="dropdown-menu bg-light shadow bd-0" aria-labelledby="user">
+                    <!-- 
                     <li><a type="button" class=" nav-link dropdown-item" href="#">Profile</a></li>
-                    <li>
+                    <li> -->
 
-                    </li>
-                    <li><a type="button" class="nav-link dropdown-item" href="/logout">Logout </a></li>
-                  </ul>
                 </li>
+                <li><a type="button" class="nav-link dropdown-item" href="/logout">Logout </a></li>
               </ul>
-
-
-              <% } %>
+            </li>
       </ul>
+
+
+      <% } %>
+        </ul>
     </div>
 
   </div>
