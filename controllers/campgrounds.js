@@ -22,19 +22,20 @@ module.exports.renderNewForm = (req, res) => {
 
 module.exports.searchGround = async (req, res) => {
 
+    console.log(req.query)
+
     const search = req.body.search || '';
     console.log("request comming :" + search);
 
     if (!search) {
-        const campgrounds = await Campground.find({})
-        return res.render('campgrounds/index.ejs', { campgrounds, search: search || '' });
+        return res.redirect('/campgrounds');
     }
     const data = await Campground.find({ "title": { "$regex": search, "$options": "i" } })
     console.log(data);
     res.render("campgrounds/index.ejs", {
         title: search + '| search',
         search: search || '',
-        campgrounds: data || []
+        campgrounds: data || [],
     })
 }
 

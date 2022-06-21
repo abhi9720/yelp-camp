@@ -8,25 +8,30 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
     integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous" />
   <link rel="stylesheet" href="/stylesheets/home.css" />
+
 </head>
 
 <body class="d-flex text-center text-white bg-dark">
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
     <header class="mb-auto">
-      <div>
-        <h3 class="float-md-left mb-0">YelpCamp</h3>
 
-        <nav class="nav nav-masthead justify-content-center float-md-right">
-          <% if(!currentUser) { %>
-            <a class="nav-link" href="/login">Login</a>
-            <a class="nav-link" href="/register">Register</a>
-            <% } else { %>
-              <a class="nav-link" href="/logout">Logout</a>
-              <% } %>
-        </nav>
-      </div>
+      <h3 class="float-md-left mb-0 nav-brand-title mtn5">
+        <span id="nav-logo"></span>
+        YelpCamp
+      </h3>
+
+
+      <nav class="nav nav-masthead justify-content-center float-md-right">
+        <% if(!currentUser) { %>
+          <a class="nav-link" href="/login">Login</a>
+          <a class="nav-link" href="/register">Register</a>
+          <% } else { %>
+            <a class="nav-link" href="/logout">Logout</a>
+            <% } %>
+      </nav>
+
     </header>
-    <main class="px-3">
+    <!-- <main class="px-3">
       <h1>YelpCamp</h1>
       <p class="lead">
         Welcome to YelpCamp! <br />
@@ -35,12 +40,27 @@
       </p>
 
       <a href="/campgrounds" role="button" class="btn home-btn-view">View Campgrounds</a>
-    </main>
+    </main> -->
 
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+
+        <h1 class="display-4">Yelp Camp </h1>
+        <h4>Welcome to YelpCamp!</h4>
+        <p>Jump right in and explore our many campgrounds. Feel free to share
+          <br />
+          some of your own and comment on others!
+        </p>
+      </div>
+      <a href="/campgrounds" role="button" class="btn home-btn-view">View Campgrounds</a>
+    </div>
     <footer class="mt-auto text-white-50">
       <p>&copy; 2021</p>
     </footer>
   </div>
+  <script>
+    alert(window.location.href)
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"

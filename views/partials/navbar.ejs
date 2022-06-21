@@ -1,8 +1,8 @@
-<nav id="mainNavbar" class="navbar  navbar-expand-lg navbar-light bg-white shadow" >
-  <div class="container" >
-     
-      <span class="nav-brand-title fs-2" > <span id="nav-logo"></span> YelpCamp</span>
-  
+<nav id="mainNavbar" class="navbar  navbar-expand-lg navbar-light bg-white shadow">
+  <div class="container">
+
+    <span class="nav-brand-title fs-2"> <span id="nav-logo"></span> YelpCamp</span>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-btn"
       aria-controls="navbar-btn" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -38,15 +38,16 @@
             <li class="nav-item dropdown">
               <ul class="navbar-nav">
                 <li class="nav-item dropdown">
-                  <a class=" dropdown-toggle" href="#" id="user"
-                    role="button" data-bs-toggle="dropdown" aria-expanded="false">                    
-                    <i class="fa fa-user"></i> <%=currentUser.username%>
+                  <a class=" dropdown-toggle" href="#" id="user" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <i class="fa fa-user"></i>
+                    <%=currentUser.username%>
                   </a>
                   <ul id="user-list" class="dropdown-menu dropdown-menu-white bd-0" aria-labelledby="user">
 
                     <li><a type="button" class=" nav-link dropdown-item" href="#">Profile</a></li>
                     <li>
-                      
+
                     </li>
                     <li><a type="button" class="nav-link dropdown-item" href="/logout">Logout </a></li>
                   </ul>
