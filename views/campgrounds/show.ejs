@@ -131,10 +131,10 @@
                       </span> </span>
 
             </h5>
-            
+
             <span class="text-muted w-100 d-flex justify-content-between">
               <%= campground.location %>
-              
+
                 <small class="">
                   <% for(let i=0; i<parseInt(campground.campRating); i++){ %>
                     <i class="fas fa-star text-warning"></i>
@@ -142,13 +142,13 @@
                       <%if(Math.ceil(campground.campRating) - Math.floor(campground.campRating)==1){%>
                         <i class="fas fa-star-half text-warning" aria-hidden="true"></i>
                         <%}%>
-  
+
                           <% for(let i=0; i< parseInt(5-campground.campRating) ;i++){ %>
                             <i class="fas fa-star text-muted"></i>
                             <%}%>
                               <%=campground.campRating%>
                 </small>
-                            
+
             </span>
 
 
@@ -278,7 +278,7 @@
 
 
 
-            <div class="mb-5 display-review">
+            <div class="mb-5 display-review d-flex flex-column">
 
               <% if(!campground.reviews.length){ %>
                 <h5 class=" mt-5 text-center p-4 "> No Reviews</h5>
@@ -289,66 +289,66 @@
                     Campground Reviews
 
 
-                    <% if(reviewflash && reviewflash.length){ %>
-                      <small class="float-end text-danger">
-                        <%= reviewflash %> &#10003
-                      </small>
-                      <% } %>
 
                   </h3>
 
                   <% } %>
+                    <% if(reviewflash && reviewflash.length){ %>
+                      <p class="float-end text-danger">
+                        <%= reviewflash %> &#10003
+                      </p>
+                      <% } %>
 
-                    <% campground.reviews.reverse() %>
-
-
-                      <div class="review-pannel">
-                        <ul class="list-group list-group-flush ">
-
-                          <% for(let review of campground.reviews){ %>
-
-                            <li class="list-group-item review ">
-
-                              <span class="text-capitalize  review-user">
-
-                                <i class='fas fa-user-circle'></i>
-                                <a href="#" class="review-user">
-                                  <%=review.author.username %>
-                                </a>
-
-                              </span>
-
-                              <span class="starability-result float-end mx-auto" data-rating="<%= review.rating %>">
-                                Rated: <%= review.rating %> stars
-                              </span>
-
-                              <span class="mt-1 review-text">
-
-                                <br>
-                                <%= review.body.charAt(0).toUpperCase() +review.body.slice(1) %>
+                        <% campground.reviews.reverse() %>
 
 
-                                  <%if(currentUser && review.author.equals(currentUser._id)) { %>
-                                    <div>
-                                      <form class="" id="review-delete-form"
-                                        action="/campgrounds/<%=campground._id%>/reviews/<%=review._id%>?_method=DELETE"
-                                        method="POST">
-                                        <button type="submit" class="" id="delete-review">
-                                          Delete
-                                        </button>
-                                      </form>
+                          <div class="review-pannel">
+                            <ul class="list-group list-group-flush ">
 
-                                    </div>
+                              <% for(let review of campground.reviews){ %>
 
-                                    <% } %>
-                              </span>
+                                <li class="list-group-item review ">
 
-                            </li>
+                                  <span class="text-capitalize  review-user">
 
-                            <% } %>
+                                    <i class='fas fa-user-circle'></i>
+                                    <a href="#" class="review-user">
+                                      <%=review.author.username %>
+                                    </a>
 
-                        </ul>
-                      </div>
+                                  </span>
+
+                                  <span class="starability-result float-end mx-auto" data-rating="<%= review.rating %>">
+                                    Rated: <%= review.rating %> stars
+                                  </span>
+
+                                  <span class="mt-1 review-text">
+
+                                    <br>
+                                    <%= review.body.charAt(0).toUpperCase() +review.body.slice(1) %>
+
+
+                                      <%if(currentUser && review.author.equals(currentUser._id)) { %>
+                                        <div>
+                                          <form class="" id="review-delete-form"
+                                            action="/campgrounds/<%=campground._id%>/reviews/<%=review._id%>?_method=DELETE"
+                                            method="POST">
+                                            <button type="submit" class="" id="delete-review">
+                                              Delete
+                                            </button>
+                                          </form>
+
+                                        </div>
+
+                                        <% } %>
+                                  </span>
+
+                                </li>
+
+                                <% } %>
+
+                            </ul>
+                          </div>
             </div>
       </div>
     </div>
@@ -366,7 +366,7 @@
 
   <script>
     const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
-    const campground = <%- JSON.stringify(campground) %>
+    const campground = <% - JSON.stringify(campground) %>
   </script>
 
   <script src="/javascripts/validaterating.js"></script>

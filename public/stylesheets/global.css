@@ -225,15 +225,28 @@ a {
 
 .display-review {
   margin-top: 14px;
-
   padding-left: 4px;
   background-color: rgb(256, 256, 256, 0.9);
 }
 
 .review-pannel {
-  height: 50rem;
+  height: fit-content;
+  max-height: 50rem !important;
   overflow: auto;
-  border-bottom: 2px solid black;
+
+}
+
+.review-pannel::-webkit-scrollbar {
+  width: 10px;
+}
+
+.review-pannel::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.review-pannel::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
 }
 
 #add-review-btn {
