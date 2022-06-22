@@ -130,7 +130,7 @@ const fontSrcUrls = [
   "https://fonts.googleapis.com",
   "https://fonts.googleapis.com/css2",
   "https://use.fontawesome.com/releases/v5.15.3/webfonts/",
-  "https://fonts.gstatic.com/s/roboto/v27/",
+  "https://fonts.gstatic.com/s/roboto/v30/",
 ];
 app.use(
   helmet.contentSecurityPolicy({
