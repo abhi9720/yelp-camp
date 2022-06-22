@@ -7,12 +7,32 @@ const { cloudinary } = require('../cloudinary/');
 
 module.exports.renderMapview = async (req, res) => {
     const campgrounds = await Campground.find({})
+
     res.render("campgrounds/mapview.ejs", { campgrounds, search: '' })
 }
 
 module.exports.index = async (req, res) => {
-    const campgrounds = await Campground.find({})
-    res.render('campgrounds/index.ejs', { campgrounds, search: '' });
+    const campgrounds = await Campground.find({}).populate({
+        path: 'reviews',  // also populating  author of review 
+        populate: {
+            path: 'author'
+        }
+    }).populate('author');
+
+    let data = []
+    for (let camp of campgrounds) {
+        let sum = 0, rating = 0;
+
+        if (camp.reviews.length > 0) {
+            for (let r of camp.reviews) {
+                sum += r.rating;
+            }
+            rating = Math.round((sum * 1.0 / camp.reviews.length) * 10) / 10;
+        }
+        data.push({ ...camp._doc, campRating: rating });
+    }
+
+    res.render('campgrounds/index.ejs', { campgrounds: data, search: '' });
 }
 
 module.exports.renderNewForm = (req, res) => {
@@ -26,16 +46,16 @@ module.exports.renderNewForm = (req, res) => {
 
 module.exports.searchGround = async (req, res) => {
 
-    console.log(req.query)
+
 
     const search = req.body.search || '';
-    console.log("request comming :" + search);
+
 
     if (!search) {
         return res.redirect('/campgrounds');
     }
     const data = await Campground.find({ "title": { "$regex": search, "$options": "i" } })
-    console.log(data);
+
     res.render("campgrounds/index.ejs", {
         title: search + '| search',
         search: search || '',
@@ -57,7 +77,7 @@ module.exports.createCampground = async (req, res) => {
         limit: 1
     }).send()
 
-    console.log(geoData);
+
     const campground = new Campground(req.body.campground);
     campground.geometry = geoData.body.features[0].geometry;
 
@@ -65,7 +85,7 @@ module.exports.createCampground = async (req, res) => {
     campground.images = req.files.map(f => ({ url: f.path, filename: f.filename }));
     campground.author = req.user._id;
     await campground.save();
-    //console.log(req.files);//console.log(campground);
+
     req.flash('success', "Successfully Added New Campground ")
     res.redirect(`/campgrounds/${campground._id}`);
 
@@ -82,12 +102,26 @@ module.exports.showCampground = async (req, res) => {
             path: 'author'
         }
     }).populate('author');
-    // console.log(campground);
-
     if (!campground) {
         req.flash('error', "Campground Doesn't Exists");
         return res.redirect('/campgrounds')
     }
+
+
+
+
+    let sum = 0, rating = 0;
+
+    if (campground.reviews.length > 0) {
+        for (let r of campground.reviews) {
+            sum += r.rating;
+        }
+        rating = Math.round((sum * 1.0 / campground.reviews.length) * 10) / 10;
+    }
+    campground.campRating = rating;
+
+
+
     res.render('campgrounds/show', { campground });
 }
 
@@ -111,7 +145,7 @@ module.exports.renderEditForm = async (req, res) => {
 
 module.exports.updateCampground = async (req, res) => {
     const { id } = req.params;
-    console.log(req.body);
+
     const campground = await Campground.findByIdAndUpdate(id, { ...req.body.campground });
     const imgs = req.files.map(f => ({ url: f.path, filename: f.filename }));
     campground.images.push(...imgs);
@@ -132,7 +166,7 @@ module.exports.deleteCampground = async (req, res) => {
     const { id } = req.params;
 
     const camp = await Campground.findByIdAndDelete(id);
-    //console.log('campground deleted successfully',campground);
+
     req.flash('success', 'Successfully Deleted Campground ')
     res.redirect(`/campgrounds`)
 

@@ -7,9 +7,19 @@
   <div class="container mt-5 mb-5">
 
     <div class="row">
-      <h1 class="text-capitalize ">
-        <%= campground.title %>
-      </h1>
+
+      <div class="d-flex align-items-center gap-1">
+
+        <h3 class="mr-3">
+          <a href="http://localhost:8000/campgrounds" class="text-primary">
+            <i class="fas fa-angle-double-left text-primary"></i>
+          </a>
+        </h3>
+        <h1 class="text-capitalize ml-5">
+          <%= campground.title %>
+        </h1>
+
+      </div>
       <div class="col-md-7 mx-auto">
 
 
@@ -116,14 +126,29 @@
 
 
 
-                    <span class="float-end  mx-3"> <b>$</b> <span class="text-danger">
+                    <span class="float-end  mx-1"> <b>$</b> <span class="text-danger">
                         <%=campground.price%>/night
                       </span> </span>
 
             </h5>
-
-            <span class="text-muted">
+            
+            <span class="text-muted w-100 d-flex justify-content-between">
               <%= campground.location %>
+              
+                <small class="">
+                  <% for(let i=0; i<parseInt(campground.campRating); i++){ %>
+                    <i class="fas fa-star text-warning"></i>
+                    <%}%>
+                      <%if(Math.ceil(campground.campRating) - Math.floor(campground.campRating)==1){%>
+                        <i class="fas fa-star-half text-warning" aria-hidden="true"></i>
+                        <%}%>
+  
+                          <% for(let i=0; i< parseInt(5-campground.campRating) ;i++){ %>
+                            <i class="fas fa-star text-muted"></i>
+                            <%}%>
+                              <%=campground.campRating%>
+                </small>
+                            
             </span>
 
 
@@ -167,6 +192,7 @@
             <%= campground.location %>
           </li>
         </ul>
+
 
 
 

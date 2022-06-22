@@ -2,8 +2,8 @@ mapboxgl.accessToken = "pk.eyJ1IjoibGF6eWNvZGVyMTIiLCJhIjoiY2tuNWpkY2ttMDRyMjMxb
 var map = new mapboxgl.Map({
     container: 'cluster-map',
     style: 'mapbox://styles/mapbox/light-v10',
-    center: [-100.59179687498357, 40.66995747013945],
-    zoom: 4
+    center: [78.02, 27.18],
+    zoom: 2
 });
 console.log(map);
 console.log(campgrounds);

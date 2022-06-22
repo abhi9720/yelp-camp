@@ -1,3 +1,4 @@
+
 const reviewForm = document.querySelector('#review-form');
 const inputs = document.querySelectorAll("input[type='radio']");
 
