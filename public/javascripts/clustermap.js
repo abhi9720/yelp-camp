@@ -3,7 +3,7 @@ var map = new mapboxgl.Map({
     container: 'cluster-map',
     style: 'mapbox://styles/mapbox/light-v10',
     center: [78.02, 27.18],
-    zoom: 2
+    zoom: 4
 });
 console.log(map);
 console.log(campgrounds);
