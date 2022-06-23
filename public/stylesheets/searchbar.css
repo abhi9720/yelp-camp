@@ -10,16 +10,14 @@
 }
 
 #searchinput input {
-  font-weight: 900 !important;
+  font-weight: 700 !important;
 }
 
 .searchwrapper {
   padding: 10px 3px;
   background-color: white;
 
-  -webkit-box-shadow: -1px 5px 5px 0px rgba(224, 220, 224, 0.58);
-  -moz-box-shadow: -1px 5px 5px 0px rgba(224, 220, 224, 0.58);
-  box-shadow: -1px 5px 5px 0px rgba(224, 220, 224, 0.58);
+
   border-radius: 10px;
 }
 

@@ -11,7 +11,7 @@
       <div class="col-md-10 mx-auto d-flex align-items-center gap-1">
 
         <h3 class="mr-3">
-          <a href="http://localhost:8000/campgrounds" class="text-primary">
+          <a href="/campgrounds" class="text-primary" title="back">
             <i class="fas fa-angle-double-left text-primary"></i>
           </a>
         </h3>
@@ -24,7 +24,7 @@
 
 
 
-        <div class="card mb-3 shadow-sm ">
+        <div class="card mb-3 shadow-sm bgadded">
 
           <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -366,7 +366,7 @@
 
   <script>
     const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
-    const campground = <%- JSON.stringify(campground) %>
+    const campground = <% - JSON.stringify(campground) %>
   </script>
 
   <script src="/javascripts/validaterating.js"></script>

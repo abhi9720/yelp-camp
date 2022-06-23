@@ -16,7 +16,7 @@ body {
 
 body {
   font-size: 15px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Poppins', sans-serif;
   min-width: 320px;
   color: #000;
 
@@ -391,6 +391,23 @@ a {
   border-radius: 0px;
 }
 
+.bgadded {
+
+  background-color: white;
+
+  -webkit-box-shadow: -1px 5px 5px 0px rgba(224, 220, 224, 0.58);
+  -moz-box-shadow: -1px 5px 5px 0px rgba(224, 220, 224, 0.58);
+  box-shadow: -1px 5px 5px 0px rgba(224, 220, 224, 0.58);
+
+  padding: 10px;
+}
+
+@media(max-width:800px) {
+  .bgadded {
+    padding: 0px;
+  }
+}
+
 #text-body:focus {
   border-color: #b87d25;
   box-shadow: 4px 4px 6px 2px #ddc49fb4;
@@ -444,16 +461,15 @@ a {
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-
   color: #12302e;
-
-  font-size: 16px;
+  font-size: 1.1rem;
   font-weight: 400;
   overflow-x: hidden;
-  line-height: 24px;
+  line-height: 32px;
   -webkit-font-smoothing: antialiased;
   white-space: pre-line;
   text-align: start;
+
 }
 
 #new-camp-fom {
@@ -653,7 +669,7 @@ a {
 
 #navbar-btn a {
   color: rgba(0, 0, 0, 0.692);
-  font-family: "Roboto", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1rem;
   padding: 10px 15px;
   margin-left: 1.5rem;
