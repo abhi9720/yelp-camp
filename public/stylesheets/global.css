@@ -197,9 +197,14 @@ a {
 
 /* review  */
 .review {
-  background-color: rgba(187, 184, 184, 0);
-  margin-bottom: 0px;
-  bottom: 0;
+  background-color: white;
+
+
+
+  padding: 10px 3px;
+  background-color: white;
+
+
 }
 
 .review-user {
@@ -225,8 +230,13 @@ a {
 
 .display-review {
   margin-top: 14px;
-  padding-left: 4px;
+  padding: 4px;
   background-color: rgb(256, 256, 256, 0.9);
+  -webkit-box-shadow: -1px 5px 5px 0px rgba(224, 220, 224, 0.58);
+  -moz-box-shadow: -1px 5px 5px 0px rgba(224, 220, 224, 0.58);
+  box-shadow: -1px 5px 5px 0px rgba(224, 220, 224, 0.58);
+  border-radius: 10px;
+  border-radius: 10px;
 }
 
 .review-pannel {
@@ -336,7 +346,33 @@ a {
 .show-card-img {
   width: 100%;
   height: 30rem;
+  object-fit: cover;
+
 }
+
+.showonhover {
+  transition: all 1s !important;
+}
+
+.showonhover:hover {
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px !important;
+}
+
+
+@media(max-width:800px) {
+  .show-card-img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+
+  }
+
+
+  .removepaddingforsmall {
+    padding: 2px;
+  }
+}
+
 
 .dropdown-toggle::after {
   display: none !important;
@@ -416,6 +452,8 @@ a {
   overflow-x: hidden;
   line-height: 24px;
   -webkit-font-smoothing: antialiased;
+  white-space: pre-line;
+  text-align: start;
 }
 
 #new-camp-fom {
@@ -576,7 +614,7 @@ a {
 .map {
   margin-top: 0.3rem;
   height: 24rem;
-  width: 30rem;
+  width: 100%;
 }
 
 @media (max-width: 1200px) {

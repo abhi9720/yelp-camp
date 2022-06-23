@@ -17,7 +17,7 @@
       <p  class="fs-2 text-center fs-bolder">Welcome To Yelp Camp</p>
       </div> -->
 
-  
+
 
 
 
@@ -31,37 +31,19 @@
     <div class="container-xl">
 
 
+
+
+
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h4 class="display-6">It's time for new</h4>
+          <h1 class="display-1">Adventures</h1>
+        </div>
+      </div>
+
+
       <div class="row d-flex justify-content-center px-3">
 
-        <!-- <div class="col-md-2 d-inline-block"> -->
-
-        <!-- <ul class="navbar-nav mb-2 mb-lg-0">
-
-            <li class="nav-item dropdown">
-
-
-              <div class="dropdown">
-                <button id="sort-btn" class="dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-
-                  Sort By <small class="ms-3" style="color:  #77777796;;"> &#9660;</small>
-                </button>
-                <ul class="dropdown-menu bg-light" aria-labelledby="sort-by">
-                  <li><a class="dropdown-item" href="#">Most Visted</a></li>
-                  <li><a class="dropdown-item" href="#">5 star</a></li>
-                  <li><a class="dropdown-item" href="#">4 Star</a></li>
-
-
-                </ul>
-              </div>
-
-
-
-            </li>
-          </ul> -->
-
-
-        <!-- </div> -->
 
         <div class="col-md-10 d-inline-block searchwrapper">
 
@@ -111,9 +93,8 @@
 
           <% for(let campground of campgrounds){ %>
 
-            <div class="col-md-5  col-lg-4 col-sm-12 mx-auto p-md-3 p-sm-0">
-              <div class="card mb-3 shadow-sm">
-
+            <div class="col-md-5  col-lg-6 col-sm-12 mx-auto removepaddingforsmall">
+              <div class="card mb-3 shadow-sm p-2 showonhover">
                 <% if(campground.images.length>0) {%>
                   <a href="/campgrounds/<%=campground._id%>">
                     <img class="card-img-top camp-image" src="<%=campground.images[0].url%>" alt="">

@@ -24,3 +24,14 @@ body {
 	width: 100% !important;
 	height: 70vh !important;
 }
+@media(max-width:800px){
+	.mapboxcontainer {
+		height: 85vh;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+	.mapboxcontainerwrapper {
+		width: 100% !important;
+		height: 80vh !important;
+	}
+}

@@ -163,6 +163,7 @@ module.exports.updateCampground = async (req, res) => {
 
 module.exports.deleteCampground = async (req, res) => {
 
+    
     const { id } = req.params;
 
     const camp = await Campground.findByIdAndDelete(id);

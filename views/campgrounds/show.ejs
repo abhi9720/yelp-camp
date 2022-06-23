@@ -8,7 +8,7 @@
 
     <div class="row">
 
-      <div class="d-flex align-items-center gap-1">
+      <div class="col-md-10 mx-auto d-flex align-items-center gap-1">
 
         <h3 class="mr-3">
           <a href="http://localhost:8000/campgrounds" class="text-primary">
@@ -20,7 +20,7 @@
         </h1>
 
       </div>
-      <div class="col-md-7 mx-auto">
+      <div class="col-md-10 mx-auto p-0">
 
 
 
@@ -155,9 +155,9 @@
 
             <ul class="list-group list-group-flush ">
 
-              <li class="list-group-item ">
+              <li class="list-group-item p-0 ">
                 <span class="description">
-                  <%=campground.description %>
+                  <%= (campground.description).trim() %>
                 </span>
               </li>
 
@@ -184,7 +184,7 @@
 
 
 
-      <div class="col-md-5 mx-auto">
+      <div class="col-md-10 mx-auto p-1">
         <div id='map' class="map shadow"></div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item shadow-sm " id="city">
@@ -366,7 +366,7 @@
 
   <script>
     const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
-    const campground = <% - JSON.stringify(campground) %>
+    const campground = <%- JSON.stringify(campground) %>
   </script>
 
   <script src="/javascripts/validaterating.js"></script>
