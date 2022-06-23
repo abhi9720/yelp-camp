@@ -352,6 +352,7 @@ a {
 
 .showonhover {
   transition: all 1s !important;
+  
 }
 
 .showonhover:hover {
@@ -366,13 +367,14 @@ a {
     object-fit: cover;
 
   }
-
-
   .removepaddingforsmall {
     padding: 2px;
   }
 }
 
+.removepaddingforsmall{
+  flex-grow: 1;
+}
 
 .dropdown-toggle::after {
   display: none !important;
@@ -629,7 +631,7 @@ a {
 
 .map {
   margin-top: 0.3rem;
-  height: 24rem;
+  height: 20rem;
   width: 100%;
 }
 
