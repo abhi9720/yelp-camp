@@ -2,7 +2,9 @@
 A Node.js Project from Udemy Web Development course-By Colt Steele. It is an Nodejs project following Model-View-Controller(MVC) architecture,allowing user to do full crud operations- login user, adding campground , adding review , deleting camp , rating camp , upload images and many more.
 
 ## Live Demo
-  Click for Live Demo - [yelp-camp](https://yelp-campbase.herokuapp.com/).
+  Click for Live Demo 1 - [yelp-camp](https://yelpcamp-base.herokuapp.com/).
+  Click for Live Demo 1 - [yelp-camp](https://yelp-campbase.herokuapp.com/).
+  
   ![camp-home](/uploads/home.jpg)
   ***
   
