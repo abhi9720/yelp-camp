@@ -75,9 +75,41 @@
   flex-direction: column;
   color: white;
   font-weight: 900 !important;
-  text-shadow: 2px 2px 10px black;
+  text-shadow: -5px 5px 5px rgb(0 0 0 / 25%), -7px 7px 7px rgb(0 0 0 / 35%);
 
 
+}
+
+.jumbotron h1 {
+  font-weight: 600;
+}
+
+.jumbotron h1::before {
+  content: "Adventures";
+  animation: animate ease-in infinite 20s;
+  padding-left: 10px;
+
+}
+
+
+
+
+
+@keyframes animate {
+
+
+  25% {
+    content: "Thrills";
+
+  }
+
+  50% {
+    content: "Experiences";
+  }
+
+  75% {
+    content: "Escapes";
+  }
 }
 
 
