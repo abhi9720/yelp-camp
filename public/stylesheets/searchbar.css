@@ -64,7 +64,7 @@
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  height: 70vh;
+  height: calc( 100vh - 162px );
   z-index: 0;
   background-image: url('../img/bgimg.jpg');
 
@@ -87,9 +87,7 @@
 
 @media (max-width: 767px) {
   #navbar-search {
-
     background-attachment: initial;
-
   }
 
   .searchwrapper {

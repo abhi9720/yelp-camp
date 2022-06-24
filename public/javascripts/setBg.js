@@ -28,6 +28,6 @@ var timer = setInterval(function () {
     }
 
     bgimagenavbar.style.backgroundImage = 'url(' + paths[i++] + ')'; // Sete the path to the current counter and then increase the counter
-}, 7000);
+}, 9000);
 
 
