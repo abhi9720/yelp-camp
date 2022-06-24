@@ -171,15 +171,8 @@
 
 
 @media(max-width:740px) {
-
-
   #searchbar {
     font-size: 1rem;
-  }
-
-  #navbar-search {
-    background-size: 214%;
-    background-position: bottom;
   }
 }
 
