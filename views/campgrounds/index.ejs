@@ -3,15 +3,33 @@
 
 
   <div id="navbar-search">
+    <!-- <img class="navbar-searchimg" src="../img/bgimg.jpg" alt=""> -->
+
+
 
     <div class="container-xl">
 
-      <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h4 class="display-5 fw-bold">It's time for new</h4>
-          <h1 class="display-1"></h1>
+
+      <div class="container">
+
+
+        <div id="containerAnimate">
+          <h4 class="display-4 fw-bold" style="color: white;">It's time for new</h4>
+          <div id="flip" class="display-3 fw-normal">
+            <div>
+              <div>Thrills</div>
+            </div>
+            <div>
+              <div>Experiences</div>
+            </div>
+            <div>
+              <div>Adventures</div>
+            </div>
+          </div>
+
         </div>
       </div>
+      <!-- </div> -->
 
 
       <div class="row d-flex justify-content-center px-3">
@@ -108,6 +126,12 @@
                         </small>
                       </p>
 
+                      <div class="card-text description_frontcard">
+
+                        <%= (campground.description).trim() %>
+
+                      </div>
+
                     </div>
               </div>
             </div>
@@ -116,3 +140,5 @@
             <% } %>
     </div>
   </div>
+
+  <script src="./javascripts/setBg.js"></script>
