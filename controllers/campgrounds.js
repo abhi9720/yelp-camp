@@ -54,7 +54,16 @@ module.exports.searchGround = async (req, res) => {
     if (!search) {
         return res.redirect('/campgrounds');
     }
-    const data = await Campground.find({ "title": { "$regex": search, "$options": "i" } })
+
+
+    const data = await Campground.find(
+        {
+            "$or": [
+                { "title": { "$regex": search, "$options": "i" } },
+                { "location": { "$regex": search, "$options": "i" } }
+            ]
+        }
+    )
 
     res.render("campgrounds/index.ejs", {
         title: search + '| search',
@@ -163,7 +172,7 @@ module.exports.updateCampground = async (req, res) => {
 
 module.exports.deleteCampground = async (req, res) => {
 
-    
+
     const { id } = req.params;
 
     const camp = await Campground.findByIdAndDelete(id);

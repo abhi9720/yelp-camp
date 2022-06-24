@@ -37,8 +37,8 @@
 
         <div class="col-md-10 d-inline-block searchwrapper">
 
-          <form action="/campgrounds/search" class="input-group" id="search-form" method="post">
-            <input name="search" class="searchinput" type="search" placeholder="Type to search..."
+          <form action="/campgrounds/search" class="input-group" id="search-form" method="post" autocomplete="off">
+            <input name="search" class="searchinput" type="text" autocomplete="off" placeholder="Type to search..."
               value="<%= search %>">
             <div class="input-group-append">
               <button type="submit" class="btn btn-link border-0 btn-floating">

@@ -1,11 +1,12 @@
 var paths =
-    ["../img/bg7.jpg",
+    [
         "../img/bg2.jpg",
+        "../img/bg7.jpg",
         "../img/bg4.jpg",
         "../img/bg6.avif",
         "../img/bg8.jpg",
         "../img/bg9.webp",
-        "../img/bg11.webp",
+        "../img/bg11.jpg",
         "../img/bg10.webp",
         "../img/bg12.jpeg",
         "../img/gghxttyun7a4labvdsce1sbxkiv0_1615884301_shutterstock_796094905.jpg.webp",

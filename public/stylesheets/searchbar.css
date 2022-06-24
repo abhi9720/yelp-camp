@@ -57,17 +57,14 @@
 
 #navbar-search {
   margin-bottom: 2rem;
-  padding-bottom: 8px;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
-  padding-top: 10vh;
-
-  background-size: fill;
-  background-position: top;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  height: 77vh;
+  height: 70vh;
   z-index: 0;
   background-image: url('../img/bgimg.jpg');
 
@@ -78,7 +75,8 @@
   background-repeat: no-repeat;
   background-size: cover;
 
-  -webkit-transition: all 0.25s linear  ;
+
+
   /* -webkit-transition: all 0.20s linear 0.001s;
   -moz-transition: all 0.20s linear 0.001s;
   -ms-transition: all 0.20s linear 0.001s;
@@ -86,21 +84,19 @@
   transition: all 0.20s linear 0.001s; */
 }
 
-.navbar-searchimg {
-  position: absolute;
-  object-fit: cover;
-  /* width: 100%;
-  top: 0;
-  left: 0;
-  height: 100%; */
-  z-index: -1;
-  background: rgba(0, 0, 0, 0.7);
-  animation: imageAnimation 7s linear 2.5s infinite;
-  transition: all ease-in 1s;
 
+@media (max-width: 767px) {
+  #navbar-search {
 
+    background-attachment: initial;
 
+  }
+
+  .searchwrapper {
+    margin-top: 40px;
+  }
 }
+
 
 @keyframe imageAnimation {
   0% {
