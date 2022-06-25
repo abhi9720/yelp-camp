@@ -5,9 +5,7 @@ var map = new mapboxgl.Map({
     center: [78.02, 27.18],
     zoom: 4
 });
-console.log(map);
-console.log(campgrounds);
-console.log(mapToken);
+
 map.addControl(new mapboxgl.NavigationControl())
 
 map.on('load', function () {
