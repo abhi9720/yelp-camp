@@ -11,9 +11,9 @@
       <div class="col-md-10 mx-auto d-flex align-items-center gap-3">
 
         <h3 class="mr-3">
-          <a href="/campgrounds" class="text-primary" title="back">            
+          <span onclick="history.back()" style="cursor: pointer;" class="text-primary" title="back">
             <i class="fas fa-arrow-left text-primary"></i>
-          </a>
+          </span>
         </h3>
         <h1 class="text-capitalize">
           <%= campground.title %>
@@ -68,7 +68,7 @@
 
 
           <div class="card-body">
-            <h5 class="card-title text-capitalize">
+            <h5 class="card-title text-capitalize" style="color: #03032d;">
               <%= campground.title %>
 
 

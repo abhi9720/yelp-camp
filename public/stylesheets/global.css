@@ -158,7 +158,11 @@ a {
   }
 }
 
-.nav-brand-title {
+
+.nav-brand-title,
+.nav-brand-title:hover,
+.nav-brand-title:active,
+.nav-brand-title:visited {
   text-decoration: inherit;
   color: inherit;
   cursor: pointer;
@@ -166,6 +170,7 @@ a {
   font-weight: 700;
   font-size: 1.5rem;
   margin-right: 4rem;
+
 }
 
 /* 
@@ -517,7 +522,7 @@ a {
 /* // navebar  */
 .content {
   flex: 1 0 auto;
-  
+
 }
 
 .footer {
@@ -553,45 +558,69 @@ a {
 
 .new-form-btn {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  
+  justify-content: center;
   align-items: center;
-  margin-bottom: 3rem;
-  margin-top: 4rem;
+  margin-bottom:4rem;  
 }
 
-#add-camp-btn1,
-#add-camp-btn2 {
-  font-size: 0.9rem;
-  text-decoration: none;
+#add-camp-btn1 {
   text-transform: uppercase;
-  background: #189cf0;
+  vertical-align: bottom;
+  border: 0;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 20%), 0 2px 10px 0 rgb(0 0 0 / 10%);
+  font-weight: 500;
+  padding: 0.625rem 1.5rem 0.5rem;
+  font-size: .75rem;
+  line-height: 1.5;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
   display: inline-block;
-  padding: 1rem 2rem;
-  border: 2px solid transparent;
-  border-radius: 12rem;
-  color: #fff;
-  font-weight: 400;
-  -webkit-transition: 0.2s all;
-  transition: 0.2s all;
+  color: #4f4f4f;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 0.125rem solid transparent;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  color: #1266f1;
+  border-color: #1266f1;
+
 }
 
 #add-camp-btn2 {
-  padding: 0.9rem 2rem;
-  border-radius: 0px;
-  background-color: rgb(28, 36, 36);
+  text-transform: uppercase;
+  vertical-align: bottom;
+  border: 0;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 20%), 0 2px 10px 0 rgb(0 0 0 / 10%);
+  font-weight: 500;
+  padding: 0.625rem 1.5rem 0.5rem;
+  font-size: .75rem;
+  color: #fff;
+  background-color: #1266f1;
+  line-height: 1.5;
+  padding: 0.75rem 1.6875rem 0.6875rem;
+  font-size: .875rem;
+  line-height: 1.6;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  margin-right: 20px;
 }
 
 #add-camp-btn2:hover {
   background-color: #fff;
-  border-color: #189cf0;
-  color: #30a3ff;
+  background-color: #0c49aa;
 }
 
 #add-camp-btn1:hover {
-  background-color: #fff;
-  border-color: #189cf0;
-  color: #189cf0;
+  background-color: #1266f1;
+  color: #fff;
 }
 
 @media (max-width: 370px) {
@@ -675,22 +704,51 @@ a {
   -moz-box-shadow: -1px 5px 5px 0px rgba(224, 220, 224, 0.58);
   box-shadow: -1px 5px 5px 0px rgba(224, 220, 224, 0.58);
   box-shadow: 0 2px 11px 0 rgb(0 0 0 / 35%);
+  /* background-color: #03032d !important; */
+  border-radius: 20px;
+  margin: 10px 20px;
+
 }
 
 
 
 #navbar-btn a {
-  color: rgba(0, 0, 0, 0.692);
+  color: #441b49 !important;
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
   padding: 10px 15px;
   margin-left: 1.5rem;
-  transition: background-color 0.5s;
+  transition: all 0.5s;
+
 }
 
-#navbar-btn a:hover {
-  background-color: rgba(211, 211, 211, 0.562);
+#navbar-btn a:after {
+  content: '';
+
+  width: 100%;
+  display: block;
+
+
+
+  border-bottom: 3px solid transparent;
+
+  -webkit-transform: scaleX(.0001);
+  transform: scaleX(.0001);
+  -webkit-transform-origin: left center;
+  transform-origin: left center;
+  -webkit-transition: all .2s linear 0.001s;
+  transition: all .2s linear;
+
 }
+
+#navbar-btn a:hover:after {
+  border-bottom: 3px solid #fb310a;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  width: 100%
+}
+
+
 
 #user {
   text-transform: capitalize;
@@ -718,3 +776,27 @@ a {
     margin-bottom: 40px;
   }
 }
+
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  align-items: flex-start !important;
+  list-style: none;
+}
+
+.card {
+  border-radius: 5px !important;
+  -webkit-box-shadow: 0 1px 2.94px 0.06px rgb(4 26 55 / 16%) !important;
+  box-shadow: 0 1px 2.94px 0.06px rgb(4 26 55 / 16%) !important;
+  margin-bottom: 10px !important;
+  -webkit-transition: all 0.3s ease-in-out !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+/* .card {
+  border: 0;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 7%), 0 4px 6px -2px rgb(0 0 0 / 5%);
+} */
