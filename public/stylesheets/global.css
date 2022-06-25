@@ -561,6 +561,7 @@ a {
   
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
   margin-bottom:4rem;  
 }
 
@@ -623,19 +624,7 @@ a {
   color: #fff;
 }
 
-@media (max-width: 370px) {
-  #add-camp-btn2 {
-    padding: 0.2rem 1rem;
-    border-radius: 0px;
-    background-color: rgb(28, 36, 36);
-  }
-}
 
-@media (max-width: 370px) {
-  #add-camp-btn1 {
-    padding: 0.2rem 1rem;
-  }
-}
 
 .input {
   border: 1px solid black;
@@ -710,6 +699,11 @@ a {
 
 }
 
+@media(max-width:800px){
+  #mainNavbar{
+    margin: 10px 5px;
+  }
+}
 
 
 #navbar-btn a {
