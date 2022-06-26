@@ -67,7 +67,7 @@
   height: calc(100vh - 162px);
   z-index: 0;
   background-image: url('../img/bgimg.jpg');
-  
+
 
   background-color: rgb(0 0 0 / 25%);
   background-blend-mode: saturation;
@@ -89,8 +89,16 @@
   -o-transition: all 0.20s linear 0.001s;
    */
 
+   -webkit-box-shadow: -1px 5px 5px 0px rgba(224, 220, 224, 0.58);
+   -moz-box-shadow: -1px 5px 5px 0px rgba(224, 220, 224, 0.58);
+   box-shadow: -1px 5px 5px 0px rgba(224, 220, 224, 0.58);
 
-  clip-path: polygon(100% 6%, 100% 0%, 60% 0%, 0% 0%, 0% 25%, 0% 84%, 16% 89%, 28% 94%, 50% 100%, 63% 96%, 73% 92%, 85% 87%, 100% 82%, 100% 25%);
+   
+
+   -webkit-clip-path: polygon(0 0, 100% 1%, 100% 85%, 50% 100%, 0 86%);
+clip-path: polygon(0 0, 100% 1%, 100% 85%, 50% 100%, 0 86%);
+
+
 }
 
 
@@ -328,25 +336,26 @@ body {
 }
 
 
-.scolldownarrow{
+.scolldownarrow {
   width: 2rem;
   height: 2rem;
   position: absolute;
   bottom: 1rem;
   /* animation: 3s linear 0s infinite normal none running svgmover; */
+  cursor: pointer;
 }
 
-@keyframes svgmover{
+@keyframes svgmover {
   0% {
     transform: translateY(0px);
-}
+  }
 
 
-50% {
+  50% {
     transform: translateY(16px);
-}
+  }
 
-100% {
+  100% {
     transform: translateY(0px);
-}
+  }
 }

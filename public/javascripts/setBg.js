@@ -31,3 +31,7 @@ var timer = setInterval(function () {
 }, 9000);
 
 
+
+function scrolldown(){
+    window.scrollBy(0 ,450)
+}
