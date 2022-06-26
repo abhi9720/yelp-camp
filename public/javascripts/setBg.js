@@ -9,6 +9,7 @@ var paths =
         "../img/bg11.jpg",
         "../img/bg10.webp",
         "../img/bg12.jpeg",
+        "../img/landing.avif",
         "../img/gghxttyun7a4labvdsce1sbxkiv0_1615884301_shutterstock_796094905.jpg.webp",
         "../img/9bpxv2xsz4jndv5aiquycl4v21kq_1616055191_shutterstock_1394470064.jpg.jpg",
         "../img/bgimg.jpg"
@@ -32,6 +33,6 @@ var timer = setInterval(function () {
 
 
 
-function scrolldown(){
-    window.scrollBy(0 ,450)
+function scrolldown() {
+    window.scrollBy(0, 610)
 }
