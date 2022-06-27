@@ -1,6 +1,6 @@
 var paths =
     [
-        "../img/bg2.jpg",
+        
         "../img/bg7.jpg",
         "../img/bg4.jpg",
         "../img/bg6.avif",
@@ -10,8 +10,11 @@ var paths =
         "../img/bg10.webp",
         "../img/bg12.jpeg",
         "../img/landing.avif",
+        "../img/bg13.jpg",
+        "../img/landing.avif",
         "../img/gghxttyun7a4labvdsce1sbxkiv0_1615884301_shutterstock_796094905.jpg.webp",
         "../img/9bpxv2xsz4jndv5aiquycl4v21kq_1616055191_shutterstock_1394470064.jpg.jpg",
+        "../img/bg2.jpg",
         "../img/bgimg.jpg"
 
 

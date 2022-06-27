@@ -52,14 +52,14 @@ body {
 .nav-link {
   padding: 0.25rem 0;
   font-weight: 700;
-  color: #441b49 !important;
+  color: #fff !important;
   margin-left: 1rem;
   border-bottom: 0.25rem solid transparent;
 }
 
 .nav-link:hover {
-  color: rgba(248, 130, 130, 0.5);
-  border-bottom-color: rgba(255, 255, 255, 0.5);
+
+  border-bottom-color: #ff7900;
 }
 
 .nav-link.active {
