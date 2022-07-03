@@ -1,6 +1,6 @@
 var paths =
     [
-        
+
         "../img/bg7.jpg",
         "../img/bg4.jpg",
         "../img/bg6.avif",
@@ -22,20 +22,18 @@ var paths =
 
 // https://images.thrillophilia.com/image/upload/s--grqL7Fr3--/c_fill,g_auto,h_642,w_1400/dpr_1.5/v1/collections/images/014/965/483/original/1637752197_TRV-Main-Villa-One-Infinity-Pools-Evening.jpg.jpg"
 var bgimagenavbar = document.querySelector("#navbar-search");
-console.log(bgimagenavbar);
+
 var i = 0;
 
 var timer = setInterval(function () {
     // If we've reached the end of the array...
-    if (i >= paths.length) {
-        i = 0;
-    }
 
+    i = (i + 1) % paths.length;
     bgimagenavbar.style.backgroundImage = 'url(' + paths[i++] + ')'; // Sete the path to the current counter and then increase the counter
 }, 9000);
 
 
 
 function scrolldown() {
-    window.scrollBy(0, 610)
+    window.scrollBy(0, 560)
 }

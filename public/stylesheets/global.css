@@ -22,9 +22,8 @@ body {
   font-size: 15px;
   font-family: "Poppins", sans-serif;
   min-width: 320px;
-  color: #000;
-
-  background: #fff !important;
+  color: #333;
+  background: #f5f8ff !important;
 }
 
 ::selection {
@@ -86,14 +85,24 @@ a {
   width: max-content;
 }
 
+.parent-camp-image {
+  overflow: hidden;
+}
+
+.introtocamp {
+  flex-direction: row;
+}
+
 .camp-image {
   width: 100%;
   height: 18rem;
   transition: filter 0.7s ease-in;
+  transition: all 250ms linear;
 }
 
 .camp-image:hover {
-  filter: brightness(1.06) drop-shadow(0px 0px 30px #c0bdbd);
+  filter: brightness(1.1) drop-shadow(1px 8px 30px #f5f8ff);
+  transform: scale(1.1);
 }
 
 .camp-image-2 {
@@ -141,6 +150,17 @@ a {
 @media (max-width: 1200px) {
   .edit-image {
     float: center;
+  }
+
+
+}
+
+
+@media (max-width: 700px) {
+
+
+  .introtocamp {
+    flex-direction: column;
   }
 }
 
@@ -205,16 +225,7 @@ a {
 }
 
 /* review  */
-.review {
-  background-color: white;
 
-
-
-  padding: 10px 3px;
-  background-color: white;
-
-
-}
 
 .review-user {
   color: #0c163b;
@@ -240,33 +251,66 @@ a {
 .display-review {
   margin-top: 14px;
   padding: 4px;
-  background-color: rgb(256, 256, 256, 0.9);
-  -webkit-box-shadow: -1px 5px 5px 0px rgba(224, 220, 224, 0.58);
-  -moz-box-shadow: -1px 5px 5px 0px rgba(224, 220, 224, 0.58);
-  box-shadow: -1px 5px 5px 0px rgba(224, 220, 224, 0.58);
-  border-radius: 10px;
-  border-radius: 10px;
+}
+
+
+
+.reviewcard {
+
+  border-radius: 12px;
+  border: 0px solid rgb(63, 63, 70);
+
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px !important;
+
+  outline-offset: 0px;
+  box-sizing: border-box;
+  resize: none;
+  text-shadow: none;
+  text-overflow: clip;
+  word-wrap: break-word;
+
+  background-color: #fff;
+  color: rgb(63, 63, 70);
+
+  margin: 20px 0px 0px;
+  padding: 20px;
+  font-size: 16px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+
 }
 
 .review-pannel {
   height: fit-content;
   max-height: 50rem !important;
   overflow: auto;
+  background-color: inherit;
 
 }
 
 .review-pannel::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
+  height: 5px;
 }
 
 .review-pannel::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
 }
 
 .review-pannel::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #0c163b;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
+
+.review-pannel::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255, 255, 255, 0.3);
+}
+
 
 #add-review-btn {
   background-color: rgb(0, 103, 184);
@@ -359,15 +403,50 @@ a {
 
 }
 
-.showonhover {
+.pannelcardcss {
   transition: all 1s !important;
+  background-color: #fff;
+  /* clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%); */
 
+  background-color: #f5f8ff;
+  background-image: -webkit-linear-gradient(120deg, #f5f8ff 35%, #fefefe 35%);
+  min-height: 400px;
 }
 
-.showonhover:hover {
+
+.pannelcardcss:hover {
   box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px !important;
 }
 
+
+
+.campstarttitle::after {
+  /* padding-bottom: 160px;
+  background-color: transparent;
+  border-image-outset: 10px;
+  border: 10px solid transparent;
+  padding: 15px;
+  z-index: 1;
+  border-image: url(../img/bee.png) 30 round; */
+
+
+  /* border-bottom: 190px solid #000; */
+  /* border-bottom-image: url(../img/bee.png);
+  border-image-width: 0 0 10px 0;
+  border-image-repeat: stretch; */
+
+
+  content: "";
+  display: block;
+  bottom: 0;
+
+  height: 50px;
+  background-image: url('../img/bee3-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center bottom;
+
+}
 
 @media(max-width:800px) {
   .show-card-img {
@@ -375,6 +454,15 @@ a {
     height: 20rem;
     object-fit: cover;
 
+  }
+
+  .campstarttitle {
+    margin-top: 20px;
+    font-weight: 600 !important;
+    display: block;
+  }
+  .hide-sm{
+    display: none;
   }
 
   .removepaddingforsmall {
@@ -396,7 +484,6 @@ a {
   margin-left: 4px;
   font-size: 1.2rem;
   letter-spacing: 1px;
-
   border-color: rgb(0, 103, 184);
 
   line-height: 1.5;
@@ -533,17 +620,8 @@ a {
   flex-shrink: 0;
 }
 
-/* 
-  #header-image{
-    height: 75vh;
-    opacity: 0.8;
-    background-image: url("https://www.threeriversparks.org/sites/default/files/2019-03/Baker%20campground.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    
-    filter: brightness(1.1) drop-shadow(1px 8px 30px #b1afaf);  
-  } */
+
+
 
 .form {
   background-color: white;

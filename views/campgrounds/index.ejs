@@ -2,7 +2,7 @@
   <link rel="stylesheet" href="/stylesheets/searchbar.css">
 
 
-  <div id="navbar-search" class="shadow">
+  <div id="navbar-search">
     <!-- <img class="navbar-searchimg" src="../img/bgimg.jpg" alt=""> -->
 
 
@@ -68,7 +68,7 @@
   <!-- //  starting dispalying campground  -->
   <!-- conatiner start  -->
   <div class="container">
-    <div class="row">
+    <div class="row ">
 
 
       <% if(!campgrounds || campgrounds.length==0){%>
@@ -79,66 +79,75 @@
             </h4>
           </div>
         </div>
-        <%}%>
+        <%} else {%>
+          <p class="d-flex justify-content-center align-items-center gap-3 introtocamp">
+            <img src="../img/camping.png" alt="" width="100px" class="hide-sm">
+            <span class="campstarttitle text-justify display-6 mb-4 fw-normal" style="color: #333;">Camps Visited by
+              People </span>
+            <img src="../img/camping2.png" alt="" width="100px" class="hide-sm">
 
-
-          <% for(let campground of campgrounds){ %>
-
-            <div class="col-md-12  col-lg-6 col-sm-12 mx-auto removepaddingforsmall">
-              <div class="card mb-3 shadow-sm p-2 showonhover">
-                <% if(campground.images.length>0) {%>
-                  <a href="/campgrounds/<%=campground._id%>">
-                    <img class="card-img-top camp-image" src="<%=campground.images[0].url%>" alt="">
-                  </a>
-                  <% } %>
+          </p>
+          <%} %>
 
 
 
+            <% for(let campground of campgrounds){ %>
 
-                    <div class="card-body">
+              <div class="col-md-12  col-lg-6 col-sm-12 mx-auto removepaddingforsmall mb-5">
+                <div class="card mb-3 shadow p-2 pannelcardcss">
+                  <% if(campground.images.length>0) {%>
+                    <a href="/campgrounds/<%=campground._id%>" class="parent-camp-image">
+                      <img class="card-img-top camp-image" src="<%=campground.images[0].url%>" alt="">
+                    </a>
+                    <% } %>
 
-                      <a href="/campgrounds/<%=campground._id%>">
-                        <h5 class="card-title text-capitalize">
-                          <%=campground.title %>
-                            <small class="text-muted float-end">$<%=campground.price%> </small>
-                        </h5>
-                      </a>
 
-                      <p class="card-subtitle">
+
+
+                      <div class="card-body">
+
                         <a href="/campgrounds/<%=campground._id%>">
-                          <small class="text-muted">
-                            <%=campground.location %>
-                          </small>
+                          <h5 class="card-title text-capitalize">
+                            <%=campground.title %>
+                              <small class="text-muted float-end">$<%=campground.price%> </small>
+                          </h5>
                         </a>
-                      </p>
-                      <p class="text-start">
-                        <small>
-                          <% for(let i=0; i<parseInt(campground.campRating); i++){ %>
-                            <i class="fas fa-star text-warning"></i>
-                            <%}%>
-                              <%if(Math.ceil(campground.campRating) - Math.floor(campground.campRating)==1){%>
-                                <i class="fas fa-star-half text-warning" aria-hidden="true"></i>
-                                <%}%>
 
-                                  <% for(let i=0; i< parseInt(5-campground.campRating) ;i++){ %>
-                                    <i class="fas fa-star text-muted"></i>
-                                    <%}%>
-                                      <%=campground.campRating%>
-                        </small>
-                      </p>
+                        <p class="card-subtitle">
+                          <a href="/campgrounds/<%=campground._id%>">
+                            <small class="text-muted">
+                              <%=campground.location %>
+                            </small>
+                          </a>
+                        </p>
+                        <p class="text-start">
+                          <small>
+                            <% for(let i=0; i<parseInt(campground.campRating); i++){ %>
+                              <i class="fas fa-star text-warning"></i>
+                              <%}%>
+                                <%if(Math.ceil(campground.campRating) - Math.floor(campground.campRating)==1){%>
+                                  <i class="fas fa-star-half text-warning" aria-hidden="true"></i>
+                                  <%}%>
 
-                      <div class="card-text description_frontcard">
+                                    <% for(let i=0; i< parseInt(5-campground.campRating) ;i++){ %>
+                                      <i class="fas fa-star text-muted"></i>
+                                      <%}%>
+                                        <%=campground.reviews.length%> reviews
+                          </small>
+                        </p>
 
-                        <%= (campground.description).trim() %>
+                        <div class="card-text description_frontcard">
+
+                          <%= (campground.description).trim() %>
+
+                        </div>
 
                       </div>
-
-                    </div>
+                </div>
               </div>
-            </div>
 
 
-            <% } %>
+              <% } %>
     </div>
   </div>
 

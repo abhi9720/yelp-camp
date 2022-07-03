@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,700&display=swap");
+
 #search-btn {
   border: 0;
   border-radius: 0px;
@@ -9,12 +10,11 @@
   width: 50px;
 }
 
-#searchinput input {
-  font-weight: 700 !important;
-}
+
+
 
 .searchwrapper {
-  padding: 10px 3px;
+  padding: 10px 1px;
   background-color: white;
   border-radius: 10px;
   margin-top: 60px;
@@ -22,13 +22,11 @@
 
   transition-property: all;
   transition-duration: 150ms;
-}
-
-.searchwrapper:focus-within {
-  opacity: 1;
-  /* backdrop-filter: blur(10px); */
+  border: 2px solid transparent;
 
 }
+
+
 
 .searchinput {
   flex: 1;
@@ -39,7 +37,15 @@
   color: #191b46fc;
   padding: 7px 13px;
   font-weight: 900;
+
   text-transform: capitalize;
+
+
+}
+
+.searchwrapper:focus-within {
+  opacity: 1;
+  border: 2px solid #0965d5;
 
 }
 
@@ -65,9 +71,11 @@
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  height: calc(100vh);
+  height: calc(100vh - 240px);
+  margin-top: 70px;
   z-index: 0;
   background-image: url('../img/bgimg.jpg');
+
 
 
 
@@ -75,7 +83,7 @@
   background-color: #111212;
   font-family: "Poppins", sans-serif;
   background-attachment: fixed;
-  background-position: center;
+  background-position: bottom center;
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -88,8 +96,9 @@
   -ms-transition: all 0.20s linear 0.001s;
   -o-transition: all 0.20s linear 0.001s;
    */
-  transition: background-image 2s;
-  -webkit-transition: background-image 2s;
+  transition: background-image 1s;
+  -webkit-transition: background-image 1s;
+  filter: brightness(1.1) drop-shadow(1px 8px 30px #f5f8ff);
 
 
 
@@ -97,7 +106,11 @@
 
 
 @media (max-width: 767px) {
-
+  #navbar-search {
+    background-size: fill;
+    height: calc(60vh);
+    background-position: bottom;
+  }
 
 
   .searchwrapper {
