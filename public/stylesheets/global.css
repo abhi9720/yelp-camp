@@ -577,7 +577,7 @@ a {
 }
 
 #newcamp-description {
-  height: 15rem;
+  height: 5rem;
 }
 
 #author {
@@ -875,3 +875,10 @@ a {
   border: 0;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 7%), 0 4px 6px -2px rgb(0 0 0 / 5%);
 } */
+
+.newcampform {
+  background-image: url('../img/5807322.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}

@@ -8,6 +8,7 @@ var paths =
         "../img/bg9.webp",
         "../img/bg11.jpg",
         "../img/bg10.webp",
+
         "../img/bg12.jpeg",
         "../img/landing.avif",
         "../img/bg13.jpg",
